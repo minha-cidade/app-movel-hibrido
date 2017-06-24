@@ -1,1 +1,19 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-content>
+    <div class="menu-header"></div>
+    <ion-list>
+      <div *ngFor="let p of pages; let i = index">
+        <ion-item (click)="openPage(p)" menuClose no-lines>
+          <ion-icon [name]="p.icon" item-left></ion-icon>
+          <ion-label item-right>{{p.title}}</ion-label>
+        </ion-item> 
+        <div *ngIf="i == 2 || i == 4"><hr/></div>
+      </div>
+      <ion-item menuClose no-lines>
+        <ion-icon name="exit" item-left></ion-icon>
+        <ion-label item-right>Sair</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
