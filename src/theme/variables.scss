@@ -46,14 +46,19 @@ $colors: (
 // --------------------------------------------------
 // iOS only Sass variables can go here
 
-
+$toolbar-ios-active-color:                 #fff;
+$toolbar-ios-inactive-color:               #fff;
+$segment-button-ios-text-color:            #fff;
 
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
 
-
+// Change the color of the segment button text
+$toolbar-md-active-color:                 #fff;
+$toolbar-md-inactive-color:               #fff;
+$segment-button-md-text-color-activated:  #fff;
 
 
 // App Windows Variables

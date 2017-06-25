@@ -12,9 +12,61 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background" padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="background">
+  <div class="card-background">
+    <ion-card>
+      <img src="assets/images/lago.jpg"/>
+      <div class="card-title">{{'João Pessoa'}}</div>
+      <div class="card-subtitle">{{'Paraíba, Brasil'}}</div>
+    </ion-card>
+  </div>
+  <ion-card>
+    <ion-card-header>Distribuição do Seu Dinheiro</ion-card-header>
+    <ion-card-content>
+      <canvas #pieCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+  <!--<ion-toolbar color="primary">
+    <ion-segment [(ngModel)]="segHome">
+      <ion-segment-button value="a">Sorry</ion-segment-button>
+      <ion-segment-button value="g">I know</ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+ 
+  <ion-card (click)="showModalInfo()">
+        <ion-item style="background-color: #ffca28; height: 90px;" no-padding text-wrap>
+          <ion-icon style="font-size: 84px; color:#fff" name="medkit" padding-left item-left></ion-icon>
+          <h2 style="color: #e0e0e0">Gastômetro</h2>
+          <h1 style="color: #ffffff">{{'R$ 25 0000,00'}}</h1>
+          <p style="color:#e0e0e0">Última atualização {{'12/06/2017'}}</p>
+        </ion-item>
+        <ion-card-header>Saúde</ion-card-header>
+        <ion-card-content>
+          Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
+        </ion-card-content>
+</ion-card>
+<ion-card (click)="showModalInfo()">
+        <ion-item style="background-color: #e040fb; height: 90px;" no-padding text-wrap>
+          <ion-icon style="font-size: 84px; color:#fff" name="bookmarks" padding-left item-left></ion-icon>
+          <h2 style="color: #e0e0e0">Gastômetro</h2>
+          <h1 style="color: #ffffff">{{'R$ 25 0000,00'}}</h1>
+          <p style="color:#e0e0e0">Última atualização {{'12/06/2017'}}</p>
+        </ion-item>
+        <ion-card-header>Saúde</ion-card-header>
+        <ion-card-content>
+          Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
+        </ion-card-content>
+</ion-card>
+<ion-card (click)="showModalInfo()">
+        <ion-item style="background-color: #00b0ff; height: 90px;" no-padding text-wrap>
+          <ion-icon style="font-size: 84px; color:#fff" name="walk" padding-left item-left></ion-icon>
+          <h2 style="color: #e0e0e0">Gastômetro</h2>
+          <h1 style="color: #ffffff">{{'R$ 25 0000,00'}}</h1>
+          <p style="color:#e0e0e0">Última atualização {{'12/06/2017'}}</p>
+        </ion-item>
+        <ion-card-header>Saúde</ion-card-header>
+        <ion-card-content>
+          Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
+        </ion-card-content>
+</ion-card>-->
 </ion-content>
