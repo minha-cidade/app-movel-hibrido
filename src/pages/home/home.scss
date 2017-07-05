@@ -2,6 +2,21 @@ page-home {
   ion-navbar ion-icon {
     font-size: 22px;
   }
+  .card {
+    ion-item {
+      height: 90px;
+    }
+    ion-item ion-icon {
+      font-size: 84px;
+      color: #fff;
+    }
+    h2, p {
+      color: #e0e0e0;
+    }
+    h1 {
+      color: #fff;
+    }
+  }
   // https://ionicframework.com/docs/components/#card-background
   .card-background {
     ion-card {

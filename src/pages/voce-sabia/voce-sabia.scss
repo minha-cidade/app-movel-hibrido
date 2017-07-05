@@ -1,0 +1,27 @@
+page-voce-sabia {
+  ion-navbar ion-icon {
+    font-size: 22px;
+  }
+  .card {
+    ion-item {
+      height: 90px;
+      background-color:  #fff;
+    }
+    ion-item ion-icon {
+      font-size: 84px;
+      color: #213A41;
+    }
+    h6 {
+      color: #777;
+    }
+    h1, p {
+      color: #213A41;
+    }
+    ion-card-header {
+      color: #fff;
+    }
+     ion-card-title {
+      color: #fff;
+    }
+  }  
+}

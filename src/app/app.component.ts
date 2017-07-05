@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,7 +27,7 @@ export class MyApp {
       { title: 'Orçamento', component: null, icon: 'trending-up' },
       { title: 'Gastômetros', component: null, icon: 'timer'},
       { title: 'Educacional', component: null, icon: 'bookmarks' },
-      { title: 'Você sabia?', component: null, icon: 'md-bulb' },
+      { title: 'Você sabia?', component: VoceSabiaPage, icon: 'md-bulb' },
       { title: 'Reclame aqui', component: null, icon: 'megaphone' },
       { title: 'Sobre', component: null, icon: 'information-circle' }
     ];
