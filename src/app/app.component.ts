@@ -22,10 +22,11 @@ export class MyApp {
 
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'home' },
-      { title: 'Comparativo', component: null, icon: 'trending-up' },
+      { title: 'Orçamento', component: null, icon: 'trending-up' },
+      { title: 'Gastômetros', component: null, icon: 'timer'},
       { title: 'Educacional', component: null, icon: 'bookmarks' },
       { title: 'Você sabia?', component: null, icon: 'md-bulb' },
-      { title: 'Período de vacas magras', component: null, icon: 'basket' },
+      { title: 'Reclame aqui', component: null, icon: 'megaphone' },
       { title: 'Sobre', component: null, icon: 'information-circle' }
     ];
   }

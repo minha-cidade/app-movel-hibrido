@@ -20,20 +20,20 @@ export class HomePage implements AfterViewInit {
   }
 
   private inflateChart() {
-    this.pieChart = new Chart(this.pieCanvas.nativeElement, {
-      type: 'pie',
-      data: {
-        labels: ["Saúde", "Educação", "Segurança", "Cultura", "Publicidade", "Esporte"], 
-        datasets: [{
-          data: [30000, 40000, 100000, 2000, 800, 20000],
-          backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)',
-                            'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)',
-                            'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)'],
-          hoverBackgroundColor: [	'rgba(255,99,132,1)','rgba(54, 162, 235, 1)',
-					                        'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)',
-					                        'rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)']
-        }]
-      }
-    });
+    // this.pieChart = new Chart(this.pieCanvas.nativeElement, {
+    //   type: 'pie',
+    //   data: {
+    //     labels: ["Saúde", "Educação", "Segurança", "Cultura", "Publicidade", "Esporte"], 
+    //     datasets: [{
+    //       data: [30000, 40000, 100000, 2000, 800, 20000],
+    //       backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)',
+    //                         'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)',
+    //                         'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)'],
+    //       hoverBackgroundColor: [	'rgba(255,99,132,1)','rgba(54, 162, 235, 1)',
+		// 			                        'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)',
+		// 			                        'rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)']
+    //     }]
+    //   }
+    // });
   }
 }
