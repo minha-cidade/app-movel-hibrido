@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-item color="primary" no-lines>
+      <ion-icon name="close" color="white" item-left (click)="close()"></ion-icon>
+      <ion-title>Publicidade</ion-title>
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+      {{'Gastos em Publicidade nos últimos 4 anos'}}
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header text-wrap>Total de Gastos</ion-card-header>
+    <ion-card-content no-padding>
+    <ion-list>
+      <ion-item no-lines text-wrap>
+        <ion-label item-left>
+          <ion-icon name="calendar" padding-right></ion-icon>
+           Ano
+        </ion-label>
+        <ion-label>
+          <ion-icon name="pricetag" padding-right></ion-icon>
+          Valor (R$)
+        </ion-label>
+      </ion-item>
+      <hr/>
+      <ion-item no-lines (click)="showDetailsMarket()" text-wrap>
+        <ion-label color="dark" padding-left item-left>
+          2014
+        </ion-label>
+        <ion-label padding-left color="dark">
+          {{'17.510.609,73'}}
+        </ion-label>
+      </ion-item>
+      <hr/>
+      <ion-item no-lines text-wrap>
+        <ion-label color="dark" padding-left item-left>
+          IGP-DI (%)
+        </ion-label>
+        <ion-label padding-left color="dark">
+          <ion-icon name="" padding-right></ion-icon>
+          {{'1,62'}}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
