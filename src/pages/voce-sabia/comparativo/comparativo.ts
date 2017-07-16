@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
+
+import * as numeral from 'numeral';
 import { Chart } from 'chart.js';
 
 import { VoceSabiaModel, AnoValor } from '../../../model/voce-sabia.model';
@@ -59,4 +61,8 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
 			}
     });
   }  
+
+  formatToCurrency(value: number): String {
+    return numeral(value).format('0,0[.]00 ');
+  }
 }
