@@ -63,6 +63,8 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
   }  
 
   formatToCurrency(value: number): String {
-    return numeral(value).format('0,0[.]00 ');
+    let valor = numeral(value).format('0,0.00').replace(/,/gi, '\.');
+    let index = valor.lastIndexOf('.');
+    return valor.substr(0, index) + ',' + valor.substr(index + 1);
   }
 }

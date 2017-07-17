@@ -1,0 +1,26 @@
+page-orcamento {
+  ion-navbar ion-icon {
+    font-size: 22px;
+  }
+  .card {
+    ion-item {
+      background-color:  #fff;
+    }
+    ion-item ion-icon {
+      font-size: 84px;
+      color: #213A41;
+    }
+    h6 {
+      color: #777;
+    }
+    h1 {
+      color: #213A41;
+    }
+    ion-card-header {
+      color: #fff;
+    }
+     ion-card-title {
+      color: #fff;
+    }
+  }  
+}

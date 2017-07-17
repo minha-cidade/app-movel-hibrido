@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
+import { OrcamentoPage } from '../pages/orcamento/orcamento';
+
 import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/comparativo';
 
 @NgModule({
@@ -14,6 +16,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     MyApp,
     HomePage,
     VoceSabiaPage,
+    OrcamentoPage,
     ComparativoVoceSabiaModal
   ],
   imports: [
@@ -25,6 +28,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     MyApp,
     HomePage,
     VoceSabiaPage,
+    OrcamentoPage,
     ComparativoVoceSabiaModal
   ],
   providers: [

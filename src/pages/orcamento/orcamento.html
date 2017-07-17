@@ -1,0 +1,52 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <button ion-button  menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Orçamento</ion-title>
+    <ion-buttons end>
+      <button ion-button>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+   <canvas #pieCanvas height="250" padding></canvas>
+   <ion-card class="card">
+    <ion-item style="height: 90px;" color="primary" no-padding text-wrap>
+      <ion-icon name="trending-up" padding-left item-left></ion-icon>
+      <h6>Valor previsto para 2017</h6>
+      <h1>{{'R$ ' + formatToCurrency(orcamentoPrevisto)}}</h1>
+      <h6>Última atualização {{'12/06/2017'}}</h6>
+    </ion-item>
+    <ion-card-header style="background-color: #13AB75;"> Despesas previstas para 2017</ion-card-header>
+    <ion-card-content  no-padding padding-top>
+    <ion-list>
+      <ion-item no-lines text-wrap>
+        <ion-label item-left>
+          <ion-icon name="calendar" color="primary" style="font-size: 16px" padding-right></ion-icon>
+          Despesa
+        </ion-label>
+        <ion-label>
+          <ion-icon name="pricetag" color="primary" style="font-size: 16px" padding-right></ion-icon>
+          Valor (R$)
+        </ion-label>
+      </ion-item>
+      <hr/>
+      <div *ngFor="let des of despesas">
+        <ion-item no-lines text-wrap>
+          <ion-label color="dark" padding-left item-left>
+            {{ des.nome }}
+          </ion-label>
+          <ion-label padding-left color="dark">
+            {{ formatToCurrency(des.valor) }}
+          </ion-label>
+        </ion-item>
+        <hr/>
+      </div>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
