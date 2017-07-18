@@ -1,4 +1,4 @@
-<ion-header no-border>
+<ion-header>
   <ion-navbar color="primary">
     <button ion-button  menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -13,16 +13,15 @@
 </ion-header>
 
 <ion-content class="background">
-   <canvas #pieCanvas height="250" padding></canvas>
-   <ion-card class="card">
-    <ion-item style="height: 90px;" color="primary" no-padding text-wrap>
+  <canvas #pieCanvas height="250" padding></canvas>
+  <ion-card>
+    <!-- <ion-item style="height: 90px;" color="primary" no-padding text-wrap>
       <ion-icon name="trending-up" padding-left item-left></ion-icon>
       <h6>Valor previsto para 2017</h6>
       <h1>{{'R$ ' + formatToCurrency(orcamentoPrevisto)}}</h1>
-      <h6>Última atualização {{'12/06/2017'}}</h6>
-    </ion-item>
+    </ion-item> -->
     <ion-card-header style="background-color: #13AB75;"> Despesas previstas para 2017</ion-card-header>
-    <ion-card-content  no-padding padding-top>
+    <ion-card-content  no-padding>
     <ion-list>
       <ion-item no-lines text-wrap>
         <ion-label item-left>
