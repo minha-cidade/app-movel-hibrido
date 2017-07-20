@@ -47,12 +47,24 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
           xAxes: [{
             gridLines: {
               color: "rgba(0, 0, 0, 0)",
-            }
+            },
 					}],
 					yAxes: [{
-						ticks: {
-							beginAtZero:true,
-						},
+						 ticks: {
+                    callback: function(label, index, labels) {
+                        if(label==0) 
+                          return 0+',00';
+                        else if(label==1000000)
+                          return 1 + " milhão";
+                        else
+                          return label/1000000+' milhões';
+                    },
+                    beginAtZero: true
+                },
+                scaleLabel: {
+                    // display: true,
+                    // labelString: '1k = 1000'
+                },
             gridLines: {
               color: "rgba(0, 0, 0, 0)",
             }

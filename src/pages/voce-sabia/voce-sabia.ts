@@ -20,10 +20,10 @@ export class VoceSabiaPage {
   detalhesPublicidade() {
     let anosValores = new Array<AnoValor>();
 
-    anosValores.push(new AnoValor(2014, 1751060973));
-    anosValores.push(new AnoValor(2015, 1657370474));
-    anosValores.push(new AnoValor(2016, 513979074));
-    anosValores.push(new AnoValor(2017, 455913278));
+    anosValores.push(new AnoValor(2014, 17510609.73));
+    anosValores.push(new AnoValor(2015, 16573704.74));
+    anosValores.push(new AnoValor(2016, 5139790.74));
+    anosValores.push(new AnoValor(2017, 4559132.78));
     
     let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new VoceSabiaModel('Publicidade', anosValores) });
     modal.present();
