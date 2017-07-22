@@ -25,7 +25,7 @@ export class VoceSabiaPage {
     anosValores.push(new AnoValor(2016, 5139790.74));
     anosValores.push(new AnoValor(2017, 4559132.78));
     
-    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new VoceSabiaModel('Publicidade', anosValores) });
+    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new VoceSabiaModel('Gastos Publicidade', anosValores, 'rgb(0, 176, 255)') });
     modal.present();
   }
 

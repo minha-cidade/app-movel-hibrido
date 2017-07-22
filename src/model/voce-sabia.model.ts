@@ -11,9 +11,11 @@ export class AnoValor {
 export class VoceSabiaModel {
   titulo: String;
   descricao: Array<AnoValor>;
+  color: String;
   
-  constructor(titulo: String, descricao: Array<AnoValor>) {
+  constructor(titulo: String, descricao: Array<AnoValor>, color: String) {
     this.titulo = titulo;
     this.descricao = descricao;
+    this.color = color;
   }
 }
