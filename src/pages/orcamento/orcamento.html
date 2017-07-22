@@ -15,32 +15,31 @@
 <ion-content class="background">
   <canvas #pieCanvas height="250" padding></canvas>
   <ion-card>
-     <ion-item style="height: 90px;" no-padding text-wrap>
-      <ion-icon name="timer" padding-left item-left></ion-icon>
-       <h6>Toque para acessar o gastômetro</h6> 
-      <h1 style="color:#213A41; font-size: 2.1em;"><span style="color:#13AB75;"><font size="4">R$ </font></span>{{formatToCurrency(orcamentoPrevisto)}}</h1>
-      <!-- <h6>Última atualização {{'21/07/2017'}}</h6> -->
+    <ion-item style="height: 90px;" no-padding text-wrap>
+      <ion-icon name="cash" padding-left item-left></ion-icon>
+      <h6>Orçamento aprovado para {{'2017'}}</h6> 
+      <h1><span style="color:#13AB75;"><font size="4">R$ </font></span>{{formatToCurrency(orcamentoPrevisto)}}</h1>
     </ion-item> 
-    <ion-card-header style="background-color: #13AB75;"> Despesas previstas para 2017</ion-card-header>
+    <ion-card-header>Despesas previstas para 2017</ion-card-header>
     <ion-card-content  no-padding>
     <ion-list>
       <ion-item no-lines text-wrap>
-        <ion-label item-left>
-          <ion-icon name="calendar" color="primary" style="font-size: 16px" padding-right></ion-icon>
+        <ion-label style="font-size: 1em;" item-left>
+          <ion-icon name="calendar" color="primary" style="font-size: 1.5em;" padding-right></ion-icon>
           Despesa
         </ion-label>
-        <ion-label>
-          <ion-icon name="pricetag" color="primary" style="font-size: 16px" padding-right></ion-icon>
-          Valor (R$)
+        <ion-label style="font-size: 1em;">
+          <ion-icon name="pricetag" color="primary" style="font-size: 1.5em" padding-right></ion-icon>
+          Valor (R<span style="font-family:sans-serif;">$</span>)
         </ion-label>
       </ion-item>
       <hr/>
       <div *ngFor="let des of despesas">
         <ion-item no-lines text-wrap>
-          <ion-label color="dark" padding-left item-left>
+          <ion-label style="font-size: 1em;" color="dark" padding-left item-left>
             {{ des.nome }}
           </ion-label>
-          <ion-label padding-left color="dark">
+          <ion-label style="font-size: 1em;" padding-left color="dark">
             {{ formatToCurrency(des.valor) }}
           </ion-label>
         </ion-item>
