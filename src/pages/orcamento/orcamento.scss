@@ -2,10 +2,12 @@ page-orcamento {
   ion-navbar ion-icon {
     font-size: 22px;
   }
+  h1 {
+     color: #213A41;
+     font-family: sans-serif;
+     font-style: bold;
+  }
   .card {
-    ion-item {
-      background-color:  #fff;
-    }
     ion-item ion-icon {
       font-size: 84px;
       color: #213A41;

@@ -15,11 +15,12 @@
 <ion-content class="background">
   <canvas #pieCanvas height="250" padding></canvas>
   <ion-card>
-    <!-- <ion-item style="height: 90px;" color="primary" no-padding text-wrap>
-      <ion-icon name="trending-up" padding-left item-left></ion-icon>
-      <h6>Valor previsto para 2017</h6>
-      <h1>{{'R$ ' + formatToCurrency(orcamentoPrevisto)}}</h1>
-    </ion-item> -->
+     <ion-item style="height: 90px;" no-padding text-wrap>
+      <ion-icon name="timer" padding-left item-left></ion-icon>
+       <h6>Toque para acessar o gastômetro</h6> 
+      <h1 style="color:#213A41; font-size: 2.1em;"><span style="color:#13AB75;"><font size="4">R$ </font></span>{{formatToCurrency(orcamentoPrevisto)}}</h1>
+      <!-- <h6>Última atualização {{'21/07/2017'}}</h6> -->
+    </ion-item> 
     <ion-card-header style="background-color: #13AB75;"> Despesas previstas para 2017</ion-card-header>
     <ion-card-content  no-padding>
     <ion-list>
