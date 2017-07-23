@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
 import { OrcamentoPage } from '../pages/orcamento/orcamento';
+import { GastometroPage } from '../pages/gastometro/gastometro';
 
 import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/comparativo';
 
@@ -17,6 +18,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     HomePage,
     VoceSabiaPage,
     OrcamentoPage,
+    GastometroPage,
     ComparativoVoceSabiaModal
   ],
   imports: [
@@ -29,6 +31,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     HomePage,
     VoceSabiaPage,
     OrcamentoPage,
+    GastometroPage,
     ComparativoVoceSabiaModal
   ],
   providers: [

@@ -6,6 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
 import { OrcamentoPage } from '../pages/orcamento/orcamento';
+import { GastometroPage } from '../pages/gastometro/gastometro';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage, icon: 'home' },
       { title: 'Orçamento', component: OrcamentoPage, icon: 'trending-up' },
-      { title: 'Gastômetros', component: null, icon: 'timer'},
+      { title: 'Gastômetros', component: GastometroPage, icon: 'timer'},
       { title: 'Educacional', component: null, icon: 'bookmarks' },
       { title: 'Você sabia?', component: VoceSabiaPage, icon: 'md-bulb' },
       { title: 'Reclame aqui', component: null, icon: 'megaphone' },

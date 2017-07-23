@@ -1,0 +1,17 @@
+page-gastometro {
+  ion-navbar ion-icon {
+    font-size: 22px;
+  }
+  .card {
+    ion-item {
+      height: 90px;
+    }
+    ion-item ion-icon {
+      font-size: 84px;
+      color: #e0e0e0;
+    }
+    h1, h2, p {
+      color: #213A41;
+    }
+  }
+}
