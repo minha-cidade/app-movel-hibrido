@@ -25,9 +25,20 @@ export class VoceSabiaPage {
     anosValores.push(new AnoValor(2016, 5139790.74));
     anosValores.push(new AnoValor(2017, 4559132.78));
     
-    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Publicidade', anosValores, 'rgb(0, 176, 255)') });
+    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Publicidade', anosValores, '#00b0ff') });
     modal.present();
   }
 
+  detalhesDiariasPassagens() {
+    let anosValores = new Array<AnoValor>();
+
+    anosValores.push(new AnoValor(2014, 17510609.73));
+    anosValores.push(new AnoValor(2015, 16573704.74));
+    anosValores.push(new AnoValor(2016, 5139790.74));
+    anosValores.push(new AnoValor(2017, 4559132.78));
+    
+    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Diárias e Passagens', anosValores, '#FFB300') });
+    modal.present();
+  }
 
 }

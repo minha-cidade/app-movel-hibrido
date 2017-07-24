@@ -8,17 +8,9 @@
 </ion-header>
 
 <ion-content class="background">
+  <canvas #lineCanvas padding></canvas>
   <ion-card>
-    <ion-card-header>
-      {{gastos.titulo + ' nos últimos 4 anos'}}
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #lineCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card>
-    <ion-card-header text-wrap>Total de Gastos</ion-card-header>
+    <ion-card-header [style.backgroundColor]="gastos.color.toString()" text-wrap>Total de Gastos</ion-card-header>
     <ion-card-content no-padding>
     <ion-list>
       <ion-item no-lines text-wrap>

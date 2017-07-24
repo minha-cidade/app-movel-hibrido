@@ -51,6 +51,8 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
 					}],
 					yAxes: [{
 						 ticks: {
+                    stepSize : 5000000,
+                    beginAtZero: true,
                     callback: function(label, index, labels) {
                         if(label==0) 
                           return 0+',00';
@@ -58,8 +60,7 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
                           return 1 + " milhão";
                         else
                           return label/1000000+' milhões';
-                    },
-                    beginAtZero: true
+                    }
                 },
                 scaleLabel: {
                     // display: true,
