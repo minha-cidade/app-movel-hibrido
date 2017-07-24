@@ -1,6 +1,12 @@
 <ion-menu [content]="content">
   <ion-content>
-    <div class="menu-header"></div>
+    <div class="card-background">
+      <div class="card-content">
+        <img src="assets/images/bg_jp2.jpg"/>
+        <div class="card-title">{{'João Pessoa'}}</div>
+        <div class="card-subtitle">{{'Paraíba, Brasil'}}</div>
+      </div>
+    </div>
     <ion-list>
       <div *ngFor="let p of pages; let i = index">
         <ion-item (click)="openPage(p)" menuClose no-lines>

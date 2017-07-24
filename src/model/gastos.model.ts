@@ -8,7 +8,7 @@ export class AnoValor {
   }
 }
 
-export class VoceSabiaModel {
+export class Gastos {
   titulo: String;
   descricao: Array<AnoValor>;
   color: String;

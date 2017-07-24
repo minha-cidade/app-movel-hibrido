@@ -1,42 +1,39 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { NavParams, ViewController } from 'ionic-angular';
 
-import * as numeral from 'numeral';
 import { Chart } from 'chart.js';
-
-import { Gastos } from '../../../model/gastos.model';
+import * as numeral from 'numeral';
 
 @Component({
-  selector: 'modal-comparativo-voce-sabia',
-  templateUrl: 'comparativo.html'
+  templateUrl: 'gastos.html',
+  selector: 'modal-gastos'
 })
-export class ComparativoVoceSabiaModal implements AfterViewInit {
+export class GastosModal  implements AfterViewInit {
    @ViewChild('lineCanvas') lineCanvas: ElementRef;
    lineChart: any;
-   gastos: Gastos;
+   ano: String;
 
-  constructor(public viewCtrl: ViewController, public navParams: NavParams) {
-    this.gastos = navParams.get('gastos');
+  constructor(public navParams: NavParams, public viewCtrl: ViewController) {
+    this.ano = "2017";
   }
-  
+
   close() {
     this.viewCtrl.dismiss();
   }
-  
-  ngAfterViewInit() {
+
+   ngAfterViewInit() {
     this.inflateChart();
   }
   
   private inflateChart() {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
-      type: 'line',
+      type: 'bar',
       data: {
-        labels: [this.gastos.descricao[0].ano, this.gastos.descricao[1].ano, this.gastos.descricao[2].ano, this.gastos.descricao[3].ano],
+        labels: [2009, 2010, 2012, 2013],
         datasets: [{
-          data: [this.gastos.descricao[0].valor, this.gastos.descricao[1].valor, this.gastos.descricao[2].valor, this.gastos.descricao[3].valor],
-          backgroundColor: this.gastos.color.toString(),
-          borderColor: this.gastos.color.toString(),
-					fill: false
+          data: [1000000, 2000000, 4000000, 61000000],
+          backgroundColor: 'rgb(0, 176, 255)',
+          borderColor: 'rgb(0, 176, 255)'
         }]
       }, 
 			options: {
@@ -73,6 +70,7 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
 			}
     });
   }  
+
 
   formatToCurrency(value: number): String {
     let valor = numeral(value).format('0,0.00').replace(/,/gi, '\.');

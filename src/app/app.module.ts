@@ -10,6 +10,7 @@ import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
 import { OrcamentoPage } from '../pages/orcamento/orcamento';
 import { GastometroPage } from '../pages/gastometro/gastometro';
 
+import { GastosModal } from '../pages/gastometro/gastos/gastos';
 import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/comparativo';
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     VoceSabiaPage,
     OrcamentoPage,
     GastometroPage,
-    ComparativoVoceSabiaModal
+    ComparativoVoceSabiaModal,
+    GastosModal
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     VoceSabiaPage,
     OrcamentoPage,
     GastometroPage,
-    ComparativoVoceSabiaModal
+    ComparativoVoceSabiaModal,
+    GastosModal
   ],
   providers: [
     StatusBar,

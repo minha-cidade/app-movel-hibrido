@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
 import { ComparativoVoceSabiaModal } from './comparativo/comparativo';
-import { VoceSabiaModel, AnoValor } from '../../model/voce-sabia.model';
+import { Gastos, AnoValor } from '../../model/gastos.model';
 
 @Component({
   selector: 'page-voce-sabia',
@@ -25,7 +25,7 @@ export class VoceSabiaPage {
     anosValores.push(new AnoValor(2016, 5139790.74));
     anosValores.push(new AnoValor(2017, 4559132.78));
     
-    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new VoceSabiaModel('Gastos Publicidade', anosValores, 'rgb(0, 176, 255)') });
+    let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Publicidade', anosValores, 'rgb(0, 176, 255)') });
     modal.present();
   }
 

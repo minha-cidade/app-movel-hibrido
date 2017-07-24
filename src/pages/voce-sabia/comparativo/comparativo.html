@@ -10,7 +10,7 @@
 <ion-content class="background">
   <ion-card>
     <ion-card-header>
-      {{'Gastos com Publicidade nos últimos 4 anos'}}
+      {{gastos.titulo + ' nos últimos 4 anos'}}
     </ion-card-header>
     <ion-card-content>
       <canvas #lineCanvas></canvas>
@@ -22,22 +22,22 @@
     <ion-card-content no-padding>
     <ion-list>
       <ion-item no-lines text-wrap>
-        <ion-label style="font-size: 1em;" item-left>
-          <ion-icon name="calendar" color="primary" padding-right></ion-icon>
+        <ion-label item-left>
+          <ion-icon name="calendar" color="primary" style="font-size: 1.5em;" padding-right></ion-icon>
            Ano
         </ion-label>
-        <ion-label style="font-size: 1em;">
-          <ion-icon name="pricetag" color="primary" padding-right></ion-icon>
-          Valor (<span style="font-family: sans-serif;">R$</span>)
+        <ion-label>
+          <ion-icon name="pricetag" color="primary" style="font-size: 1.5em;" padding-right></ion-icon>
+          Valor (<span style="font-family: serif;">$</span>)
         </ion-label>
       </ion-item>
       <hr/>
       <div *ngFor="let desc of gastos.descricao">
         <ion-item no-lines text-wrap>
-          <ion-label style="font-size: 1em;" color="dark" padding-left item-left>
+          <ion-label color="dark" padding-left item-left>
             {{ desc.ano }}
           </ion-label>
-          <ion-label style="font-size: 1em;" padding-left color="dark">
+          <ion-label padding-left color="dark">
             {{ formatToCurrency(desc.valor) }}
           </ion-label>
         </ion-item>
