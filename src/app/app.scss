@@ -18,6 +18,10 @@
   background-color: color($colors, light);
 }
 
+ion-navbar ion-icon {
+  font-size: 22px;
+}
+
 ion-menu {
    // https://ionicframework.com/docs/components/#card-background
   .card-background {

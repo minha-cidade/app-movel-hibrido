@@ -11,9 +11,9 @@ export class AnoValor {
 export class Gastos {
   titulo: String;
   descricao: Array<AnoValor>;
-  color: String;
+  color: string;
   
-  constructor(titulo: String, descricao: Array<AnoValor>, color: String) {
+  constructor(titulo: String, descricao: Array<AnoValor>, color: string) {
     this.titulo = titulo;
     this.descricao = descricao;
     this.color = color;

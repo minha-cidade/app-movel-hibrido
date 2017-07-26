@@ -15,6 +15,10 @@
         </ion-item> 
         <div *ngIf="i == 2 || i == 5"><hr/></div>
       </div>
+      <ion-item menuClose no-lines (click)="openSobreModal()">
+        <ion-icon name="information-circle" item-left></ion-icon>
+        <ion-label item-right>Sobre</ion-label>
+      </ion-item>
       <ion-item menuClose no-lines>
         <ion-icon name="exit" item-left></ion-icon>
         <ion-label item-right>Sair</ion-label>

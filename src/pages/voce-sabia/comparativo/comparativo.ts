@@ -34,8 +34,8 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
         labels: [this.gastos.descricao[0].ano, this.gastos.descricao[1].ano, this.gastos.descricao[2].ano, this.gastos.descricao[3].ano],
         datasets: [{
           data: [this.gastos.descricao[0].valor, this.gastos.descricao[1].valor, this.gastos.descricao[2].valor, this.gastos.descricao[3].valor],
-          backgroundColor: this.gastos.color.toString(),
-          borderColor: this.gastos.color.toString(),
+          backgroundColor: this.gastos.color,
+          borderColor: this.gastos.color,
 					fill: false
         }]
       }, 

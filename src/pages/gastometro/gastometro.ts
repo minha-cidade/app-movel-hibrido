@@ -10,10 +10,15 @@ import { GastosModal } from './gastos/gastos';
   selector: 'page-gastometro'
 })
 export class GastometroPage {
-  gastometroGeral: number;
+  gastometros: Array<{ nome: String, valor: number, icone: string }>;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-    this.gastometroGeral =  2578838120.02;
+    this.gastometros = [
+      { nome: 'Geral', valor: 43783237.99, icone: 'timer'},
+      { nome: 'Saúde', valor: 43783237.99, icone: 'medkit'},
+      { nome: 'Educação', valor: 43783237.99, icone: 'bookmarks'},
+      { nome: 'Segurança', valor: 43783237.99, icone: 'bookmarks'}
+    ];
   }
 
   showModalGastos() {
