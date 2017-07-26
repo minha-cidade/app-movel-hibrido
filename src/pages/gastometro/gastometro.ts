@@ -17,7 +17,14 @@ export class GastometroPage {
       { nome: 'Geral', valor: 43783237.99, icone: 'timer'},
       { nome: 'Saúde', valor: 43783237.99, icone: 'medkit'},
       { nome: 'Educação', valor: 43783237.99, icone: 'bookmarks'},
-      { nome: 'Segurança', valor: 43783237.99, icone: 'bookmarks'}
+      { nome: 'Segurança', valor: 43783237.99, icone: 'eye'},
+      { nome: 'Administração', valor: 43783237.99, icone: 'person'},
+      { nome: 'Previdência Social', valor: 43783237.99, icone: 'people'},
+      { nome: 'Urbanismo', valor: 43783237.99, icone: 'cog'},
+      { nome: 'Transporte', valor: 43783237.99, icone: 'bus'},
+      { nome: 'Cultura', valor: 43783237.99, icone: 'happy'},
+      { nome: 'Ciência e Tecnologia', valor: 43783237.99, icone: 'flask'},
+      { nome: 'Agricultura', valor: 43783237.99, icone: 'flower'}
     ];
   }
 
