@@ -1,3 +1,20 @@
 page-reclame-aqui {
-  
+  .info {
+    text-align: center;
+    margin-top: 15vh;
+    
+    ion-icon {
+      font-size: 132px;
+    }
+    p, h2, ion-icon {
+      color: #757575
+    }
+    p {
+      margin-top: 0px;
+    }
+    h2, p {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
 }

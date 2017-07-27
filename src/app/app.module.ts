@@ -11,7 +11,7 @@ import { OrcamentoPage } from '../pages/orcamento/orcamento';
 import { GastometroPage } from '../pages/gastometro/gastometro';
 import { ReclameAquiPage } from '../pages/reclame-aqui/reclame-aqui';
 import { SobreModal } from '../pages/sobre/sobre';
-
+import { ReclamacaoModal } from '../pages/reclame-aqui/reclamacao/reclamacao';
 import { GastosModal } from '../pages/gastometro/gastos/gastos';
 import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/comparativo';
 
@@ -25,7 +25,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     ReclameAquiPage,
     SobreModal,
     ComparativoVoceSabiaModal,
-    GastosModal
+    GastosModal,
+    ReclamacaoModal
   ],
   imports: [
     BrowserModule,
@@ -41,7 +42,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     ReclameAquiPage,
     SobreModal,
     ComparativoVoceSabiaModal,
-    GastosModal
+    GastosModal,
+    ReclamacaoModal
   ],
   providers: [
     StatusBar,
