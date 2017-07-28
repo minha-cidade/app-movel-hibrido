@@ -3,7 +3,7 @@
     <ion-item color="primary" no-lines>
       <ion-icon name="close" color="white" item-left (click)="close()"></ion-icon>
       <ion-title>Reclamação</ion-title>
-      <ion-icon name="send" color="white" item-right></ion-icon>
+      <ion-icon name="done-all" color="white" item-right (click)="send()"></ion-icon>
     </ion-item>
   </ion-navbar>
 </ion-header>
@@ -12,9 +12,10 @@
   <ion-list padding-top>
     <ion-item text-wrap no-lines>
       <ion-icon style=" color: #757575;" name="list" item-left></ion-icon>
-      <ion-label style="font-size: 16px;">Categorias </ion-label>
+      <ion-label style="color: #757575;font-size: 16px;">Categorias </ion-label>
       <ion-select [(ngModel)]="categoria" name="Categorias" multiple="true" okText="Ok" cancelText="Cancelar">
         <ion-option value="Saúde">Saúde</ion-option>
+        <ion-option value="Educação">Educação</ion-option>
         <ion-option value="Segurança Pública">Segurança Pública</ion-option>
         <ion-option value="Administração">Administração</ion-option>
         <ion-option value="Previdência Social">Previdência Social</ion-option>
@@ -26,19 +27,12 @@
       </ion-select>
     </ion-item>
     <hr/>
-    <ion-item text-wrap no-lines>
-      <ion-icon style=" color: #757575;" name="mail" item-left></ion-icon>
-      <ion-input type="text" placeholder="Seu e-mail"></ion-input>
+    <ion-item text-wrap color="secondary" no-lines>
+      <ion-icon style=" color: #fff;" name="chatboxes" item-left></ion-icon>
+      <ion-label style="color:#fff;font-size: 16px;">Descrição </ion-label>
     </ion-item>
-    <hr/>
     <ion-item text-wrap no-lines>
-      <ion-icon style=" color: #757575;" name="mic" item-left></ion-icon>
-      <ion-input type="text" placeholder="Título"></ion-input>
-    </ion-item>
-    <hr/>
-    <ion-item text-wrap no-lines>
-      <ion-icon style=" color: #757575;" name="chatboxes" item-left></ion-icon>
-      <ion-textarea rows="12" placeholder="Descrição"></ion-textarea>
+      <ion-textarea [(ngModel)]="body" style="font-size: 16px;" placeholder="Conteúdo" rows="15"></ion-textarea>
     </ion-item>
   </ion-list>
 </ion-content>
