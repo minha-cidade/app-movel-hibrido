@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController, ViewController } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 import { EmailComposer } from '@ionic-native/email-composer';
 
 @Component({
@@ -10,7 +10,7 @@ export class ReclamacaoModal {
   body: string;
   categoria: string;
 
-  constructor(public viewCtrl: ViewController, public alertCtrl: AlertController, private emailComposer: EmailComposer) {
+  constructor(public viewCtrl: ViewController, private emailComposer: EmailComposer) {
   }
   
   close() {
