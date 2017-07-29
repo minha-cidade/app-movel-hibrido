@@ -11,6 +11,7 @@ import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
 import { OrcamentoPage } from '../pages/orcamento/orcamento';
 import { GastometroPage } from '../pages/gastometro/gastometro';
 import { ReclameAquiPage } from '../pages/reclame-aqui/reclame-aqui';
+import { EducacionalPage } from '../pages/educacional/educacional';
 import { SobreModal } from '../pages/sobre/sobre';
 import { ReclamacaoModal } from '../pages/reclame-aqui/reclamacao/reclamacao';
 import { GastosModal } from '../pages/gastometro/gastos/gastos';
@@ -24,6 +25,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     OrcamentoPage,
     GastometroPage,
     ReclameAquiPage,
+    EducacionalPage,
     SobreModal,
     ComparativoVoceSabiaModal,
     GastosModal,
@@ -41,6 +43,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     OrcamentoPage,
     GastometroPage,
     ReclameAquiPage,
+    EducacionalPage,
     SobreModal,
     ComparativoVoceSabiaModal,
     GastosModal,
