@@ -32,10 +32,10 @@ export class VoceSabiaPage {
   detalhesDiariasPassagens() {
     let anosValores = new Array<AnoValor>();
 
-    anosValores.push(new AnoValor(2014, 17510609.73));
-    anosValores.push(new AnoValor(2015, 16573704.74));
-    anosValores.push(new AnoValor(2016, 5139790.74));
-    anosValores.push(new AnoValor(2017, 4559132.78));
+    anosValores.push(new AnoValor(2013, 2123516.64));
+    anosValores.push(new AnoValor(2014, 6092879.05));
+    anosValores.push(new AnoValor(2015, 3357845.69));
+    anosValores.push(new AnoValor(2016, 2392031.46));
     
     let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Diárias e Passagens', anosValores, '#FFB300') });
     modal.present();
