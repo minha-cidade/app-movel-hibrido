@@ -28,7 +28,6 @@ export class MyApp {
     this.storage.get('localidade-done').then(done => {
       if(!done) {
         this.rootPage = LocalidadePage;
-        this.storage.set('localidade-done', true);
       } else {
         this.rootPage = HomePage;
       }
