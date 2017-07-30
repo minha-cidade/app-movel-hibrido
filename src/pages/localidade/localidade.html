@@ -1,0 +1,21 @@
+<ion-content class="background">
+  <div class="card-input" style="margin-top: 25%;">
+    <div style="background-color: #213A41; height: 120px;">
+    </div>
+    <div style="background-color: #fff">
+      <ion-item no-lines padding-top>
+        <ion-select [(ngModel)]="estado" placeholder="Estado">
+          <ion-option value="paraiba">Paraíba</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item no-lines padding-bottom padding-top>
+        <ion-select [(ngModel)]="cidade" placeholder="Cidade">
+          <ion-option value="joao-pessoa">João Pessoa</ion-option>
+        </ion-select>
+      </ion-item>
+      <div padding-bottom padding-top>
+        <button ion-button color="secondary" (click)="pushHomePage()">Selecionar Localidade</button>
+      </div>
+    </div>
+  </div>
+</ion-content>

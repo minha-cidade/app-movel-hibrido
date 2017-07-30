@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Platform, ModalController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { VoceSabiaPage } from '../pages/voce-sabia/voce-sabia';
@@ -9,6 +10,7 @@ import { OrcamentoPage } from '../pages/orcamento/orcamento';
 import { GastometroPage } from '../pages/gastometro/gastometro';
 import { ReclameAquiPage } from '../pages/reclame-aqui/reclame-aqui';
 import { EducacionalPage } from '../pages/educacional/educacional';
+import { LocalidadePage } from '../pages/localidade/localidade';
 import { SobreModal } from '../pages/sobre/sobre';
 
 @Component({
@@ -16,15 +18,20 @@ import { SobreModal } from '../pages/sobre/sobre';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
-  rootPage:any = HomePage;
+  rootPage: any;
   pages: Array<{ title: String, component: any, icon: string }>;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public modalCtrl: ModalController) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
+              public modalCtrl: ModalController, public storage: Storage) {
+    this.initializeApp();
+
+    this.storage.get('localidade-done').then(done => {
+      if(!done) {
+        this.rootPage = LocalidadePage;
+        this.storage.set('localidade-done', true);
+      } else {
+        this.rootPage = HomePage;
+      }
     });
 
     this.pages = [
@@ -37,6 +44,15 @@ export class MyApp {
     ];
   }
 
+  initializeApp() {
+    this.platform.ready().then(() => {
+      // Okay, so the platform is ready and our plugins are available.
+      // Here you can do any higher level native things you might need.
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+    });
+  }
+
   openPage(page) {
     this.nav.setRoot(page.component);
   }
@@ -46,4 +62,3 @@ export class MyApp {
     mod.present();
   }
 }
-

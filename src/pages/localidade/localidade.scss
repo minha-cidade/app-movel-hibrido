@@ -1,0 +1,18 @@
+page-localidade {
+  .background {
+    background-image: url("../assets/images/bg_jp.jpg");
+  }
+  .card-input {
+    background-color: #fff;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+
+    .select {
+      font-size: 16px;
+      min-width: 100px;
+      margin: auto;
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { EmailComposer } from '@ionic-native/email-composer';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -12,6 +13,8 @@ import { OrcamentoPage } from '../pages/orcamento/orcamento';
 import { GastometroPage } from '../pages/gastometro/gastometro';
 import { ReclameAquiPage } from '../pages/reclame-aqui/reclame-aqui';
 import { EducacionalPage } from '../pages/educacional/educacional';
+import { LocalidadePage } from '../pages/localidade/localidade';
+
 import { SobreModal } from '../pages/sobre/sobre';
 import { ReclamacaoModal } from '../pages/reclame-aqui/reclamacao/reclamacao';
 import { GastosModal } from '../pages/gastometro/gastos/gastos';
@@ -26,6 +29,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     GastometroPage,
     ReclameAquiPage,
     EducacionalPage,
+    LocalidadePage,
     SobreModal,
     ComparativoVoceSabiaModal,
     GastosModal,
@@ -33,7 +37,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,6 +49,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     GastometroPage,
     ReclameAquiPage,
     EducacionalPage,
+    LocalidadePage,
     SobreModal,
     ComparativoVoceSabiaModal,
     GastosModal,
