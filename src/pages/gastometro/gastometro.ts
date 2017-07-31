@@ -54,7 +54,8 @@ export class GastometroPage implements OnInit {
 
   inicializaGastometros() {
     // subscribe laco de repeticao na funciona como esperado
-    this.gastometroService.getGastometroPorArea('saude').subscribe(data => { this.gastometros[1].dados = data.gastometro; this.gastometros[1].valor = data.gastometro[0].pago } );
+    this.gastometroService.getGastometroPorArea('saude').subscribe(data =>
+      { this.gastometros[1].dados = data.gastometro; this.gastometros[1].valor = data.gastometro[0].pago ; this.gastometros[0].valor += data.gastometro[0].pago; } );
     this.gastometroService.getGastometroPorArea('educacao').subscribe(data => this.gastometros[2].dados = data.gastometro );
     this.gastometroService.getGastometroPorArea('administracao').subscribe(data => this.gastometros[3].dados = data.gastometro );
     this.gastometroService.getGastometroPorArea('urbanismo').subscribe(data => this.gastometros[4].dados = data.gastometro );

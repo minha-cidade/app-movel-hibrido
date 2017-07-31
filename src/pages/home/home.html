@@ -13,6 +13,33 @@
 </ion-header>
 
 <ion-content class="background">
+  <div class="info-content">
+    <img src="assets/images/estampa_white.png" />
+  </div>
+  <ion-list>
+    <ion-card style="padding: 0px;">
+      <ion-item no-padding text-wrap>
+      <ion-icon name="logo-usd" style="margin-right: 0px;text-align: center; color: #fff; width: 140px; font-size: 64px; background-color: #13AB75;" item-left></ion-icon>
+      <h2><strong>Orçamento</strong></h2>
+      <p>Áreas, Distribuição, Valores, Gráficos</p>
+      </ion-item>
+    </ion-card>
+    <ion-card style="padding: 0px;">
+      <ion-item no-padding text-wrap>
+      <ion-icon name="timer" style="margin-right: 0px; text-align: center; color: #fff; width: 140px; font-size: 64px; background-color: #ffca28;" item-left></ion-icon>
+      <h2><strong>Gastômetro</strong></h2>
+      <p>Gastos, Gráficos, Áreas, Anual</p>
+      </ion-item>
+    </ion-card>
+    <ion-card style="padding: 0px;">
+      <ion-item no-padding text-wrap>
+      <ion-icon name="md-bulb" style="margin-right: 0px; text-align: center; color: #fff; width: 140px; font-size: 64px; background-color: #00b0ff;" item-left></ion-icon>
+      <h2><strong>Você Sabia?</strong></h2>
+      <p>Curiosidades, Valores, Gráficos, Anual</p>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+  <!--
   <ion-card class="card">
     <ion-item color="secondary" no-padding text-wrap>
       <ion-icon name="trending-up" padding-left item-left></ion-icon>
@@ -36,15 +63,15 @@
     <ion-card-content>
       Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
     </ion-card-content>
-  </ion-card>
-<!--  
+  </ion-card> -->
+<!--
 <ion-toolbar color="primary">
     <ion-segment [(ngModel)]="segHome">
       <ion-segment-button value="a">Sorry</ion-segment-button>
       <ion-segment-button value="g">I know</ion-segment-button>
     </ion-segment>
   </ion-toolbar>
- 
+
   <ion-card (click)="showModalInfo()">
         <ion-item style="background-color: #ffca28; height: 90px;" no-padding text-wrap>
           <ion-icon style="font-size: 84px; color:#fff" name="medkit" padding-left item-left></ion-icon>
