@@ -2,12 +2,12 @@
   <ion-navbar color="primary">
     <ion-item color="primary" no-lines>
       <ion-icon name="close" color="white" item-left (click)="close()"></ion-icon>
-      <ion-title>{{'Gastos Saúde'}}</ion-title>
+      <ion-title>{{'Gastos ' + titulo}}</ion-title>
     </ion-item>
   </ion-navbar>
 </ion-header>
 
-<ion-content class="background"> 
+<ion-content class="background">
   <canvas #lineCanvas padding></canvas>
   <ion-item no-lines>
     <ion-icon name="calendar" item-left></ion-icon>
@@ -22,14 +22,14 @@
         <ion-option value="2015">2015</ion-option>
         <ion-option value="2016">2016</ion-option>
         <ion-option value="2017">2017</ion-option>
-      </ion-select>  
+      </ion-select>
     </ion-item>
   <ion-card>
     <ion-item style="height: 90px;" no-padding text-wrap>
       <ion-icon name="medkit" padding-left item-left></ion-icon>
-      <h6>Gastos com Saúde no ano {{ano}}</h6>  
-      <h1><span style="font-family: serif;">$ </span>{{formatToCurrency(2578838120.02)}}</h1>
-    </ion-item> 
+      <h6>{{'Gastos com '+ titulo + ' no ano ' +ano}}</h6>
+      <h1><span style="font-family: serif;">$ </span>{{formatToCurrency(valorPago)}}</h1>
+    </ion-item>
     <ion-card-header>Principais beneficiados no ano {{ano}}</ion-card-header>
     <ion-card-content  no-padding>
     <ion-list>
@@ -44,6 +44,17 @@
         </ion-label>
       </ion-item>
       <hr/>
+      <div *ngFor="let t of dados[indexAno.get(ano)].topVinte">
+        <ion-item no-lines text-wrap>
+          <ion-label color="dark" padding-left item-left>
+            {{ t.favorecido }}
+          </ion-label>
+          <ion-label padding-left color="dark">
+            {{ formatToCurrency(t.valor) }}
+          </ion-label>
+        </ion-item>
+        <hr/>
+      </div>
     </ion-list>
     </ion-card-content>
   </ion-card>

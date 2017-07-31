@@ -1,10 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core'; 
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import * as numeral from 'numeral';
 import { Chart } from 'chart.js';
 
-import { Despesa } from '../../model/despesa.model';
+import { Despesa } from '../../models/despesa.model';
 
 @Component({
   selector: 'page-orcamento',
@@ -48,21 +48,21 @@ export class OrcamentoPage {
       data: {
         labels: ["Saúde", "Educação", "Administração", "Urbanismo", "Previdência Social", "Habitação",
                  "Encargos Especiais", "Transporte", "Assistência Social", "Segurança Pública", "Gestão Ambiental", "Cultura",
-                 "Comunicações", "Comércio e Serviços", "Ciência e Tecnologia", "Outros"], 
+                 "Comunicações", "Comércio e Serviços", "Ciência e Tecnologia", "Outros"],
         datasets: [{
-          data: [900531814, 416950010, 265920759, 249420207, 233341919, 147003000, 85067579, 57064000, 
+          data: [900531814, 416950010, 265920759, 249420207, 233341919, 147003000, 85067579, 57064000,
                  33808700, 24662937, 18768500, 18217000, 13965000,7160500 , 2559040,104397155],
           backgroundColor: ['rgba(255, 99, 132, 0.6)', 'rgba(54, 162, 235, 0.6)',
                             'rgba(255, 206, 86, 0.6)', 'rgba(75, 192, 192, 0.6)',
-                            'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)', 'rgba(233, 30, 99, 0.6)', 
-                            'rgba(156, 39, 176, 0.6)', 'rgba(205, 220, 57, 0.6)', 'rgba(230, 81, 0, 0.6)', 
-                            'rgba(121, 85, 72, 0.6)', 'rgba(255, 23, 68, 0.6)', 'rgba(170, 0, 255, 0.6)', 
+                            'rgba(153, 102, 255, 0.6)', 'rgba(255, 159, 64, 0.6)', 'rgba(233, 30, 99, 0.6)',
+                            'rgba(156, 39, 176, 0.6)', 'rgba(205, 220, 57, 0.6)', 'rgba(230, 81, 0, 0.6)',
+                            'rgba(121, 85, 72, 0.6)', 'rgba(255, 23, 68, 0.6)', 'rgba(170, 0, 255, 0.6)',
                             'rgba(63, 81, 181, 0.6)', 'rgba(255, 193, 7, 0.6)', 'rgb(245, 245, 245)'],
           hoverBackgroundColor: [	'rgba(255,99,132,1)','rgba(54, 162, 235, 1)',
 					                        'rgba(255, 206, 86, 1)', 'rgba(75, 192, 192, 1)',
-                                  'rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)', 'rgba(233, 30, 99, 1)', 
-                                  'rgba(156, 39, 176, 1)', 'rgba(205, 220, 57, 1)', 'rgba(230, 81, 0, 1)', 
-                                  'rgba(121, 85, 72, 1)', 'rgba(255, 23, 68, 1)',  'rgba(170, 0, 255, 1)', 
+                                  'rgba(153, 102, 255, 1)','rgba(255, 159, 64, 1)', 'rgba(233, 30, 99, 1)',
+                                  'rgba(156, 39, 176, 1)', 'rgba(205, 220, 57, 1)', 'rgba(230, 81, 0, 1)',
+                                  'rgba(121, 85, 72, 1)', 'rgba(255, 23, 68, 1)',  'rgba(170, 0, 255, 1)',
                                   'rgba(63, 81, 181, 1)', 'rgba(255, 193, 7, 1)', 'rgb(245, 245, 245)']
         }]
       }
@@ -74,4 +74,4 @@ export class OrcamentoPage {
     let index = valor.lastIndexOf('.');
     return valor.substr(0, index) + ',' + valor.substr(index + 1);
   }
-} 
+}

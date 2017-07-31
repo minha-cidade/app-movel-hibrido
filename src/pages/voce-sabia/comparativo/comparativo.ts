@@ -4,7 +4,7 @@ import { NavParams, ViewController } from 'ionic-angular';
 import * as numeral from 'numeral';
 import { Chart } from 'chart.js';
 
-import { Gastos } from '../../../model/gastos.model';
+import { Gastos } from '../../../models/gastos.model';
 
 @Component({
   selector: 'modal-comparativo-voce-sabia',
@@ -18,15 +18,15 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
   constructor(public viewCtrl: ViewController, public navParams: NavParams) {
     this.gastos = navParams.get('gastos');
   }
-  
+
   close() {
     this.viewCtrl.dismiss();
   }
-  
+
   ngAfterViewInit() {
     this.inflateChart();
   }
-  
+
   private inflateChart() {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'line',
@@ -38,7 +38,7 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
           borderColor: this.gastos.color,
 					fill: false
         }]
-      }, 
+      },
 			options: {
         legend: {
           display: false
@@ -54,7 +54,7 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
                     stepSize : 5000000,
                     beginAtZero: true,
                     callback: function(label, index, labels) {
-                        if(label==0) 
+                        if(label==0)
                           return 0+',00';
                         else if(label==1000000)
                           return 1 + " milhão";
@@ -73,7 +73,7 @@ export class ComparativoVoceSabiaModal implements AfterViewInit {
 				}
 			}
     });
-  }  
+  }
 
   formatToCurrency(value: number): String {
     let valor = numeral(value).format('0,0.00').replace(/,/gi, '\.');

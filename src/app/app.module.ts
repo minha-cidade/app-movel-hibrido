@@ -5,6 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { EmailComposer } from '@ionic-native/email-composer';
 import { IonicStorageModule } from '@ionic/storage';
+import { HttpModule } from '@angular/http';
+
+import { GastometroService } from '../services/gastometro.service';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -37,6 +40,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot()
   ],
@@ -59,6 +63,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     StatusBar,
     SplashScreen,
     EmailComposer,
+    GastometroService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

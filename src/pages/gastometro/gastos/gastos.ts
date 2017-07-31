@@ -4,6 +4,8 @@ import { NavParams, ViewController } from 'ionic-angular';
 import { Chart } from 'chart.js';
 import * as numeral from 'numeral';
 
+import { Gastometro } from '../../../models/gastometro.model';
+
 @Component({
   templateUrl: 'gastos.html',
   selector: 'modal-gastos'
@@ -11,10 +13,23 @@ import * as numeral from 'numeral';
 export class GastosModal  implements AfterViewInit {
    @ViewChild('lineCanvas') lineCanvas: ElementRef;
    lineChart: any;
-   ano: String;
+   ano: string;
+   titulo: string;
+   dados: Array<Gastometro>;
+   valorPago: number;
+   indexAno: Map<string, number>;
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
     this.ano = "2017";
+    this.indexAno = new Map();
+    // ano => index
+    this.indexAno.set('2017', 0);
+    this.indexAno.set('2016', 1);
+
+    this.titulo = navParams.get('titulo');
+    this.dados = navParams.get('dados');
+    
+    this.valorPago = this.dados[0].pago;
   }
 
   close() {
@@ -24,18 +39,18 @@ export class GastosModal  implements AfterViewInit {
    ngAfterViewInit() {
     this.inflateChart();
   }
-  
+
   private inflateChart() {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: [2009, 2010, 2012, 2013],
+        labels: [2016, 2017],
         datasets: [{
-          data: [1000000, 2000000, 4000000, 61000000],
+          data: [this.dados[0].pago, this.dados[0].pago],
           backgroundColor: 'rgb(0, 176, 255)',
           borderColor: 'rgb(0, 176, 255)'
         }]
-      }, 
+      },
 			options: {
         legend: {
           display: false
@@ -49,7 +64,7 @@ export class GastosModal  implements AfterViewInit {
 					yAxes: [{
 						 ticks: {
                     callback: function(label, index, labels) {
-                        if(label==0) 
+                        if(label==0)
                           return 0+',00';
                         else if(label==1000000)
                           return 1 + " milhão";
@@ -69,7 +84,7 @@ export class GastosModal  implements AfterViewInit {
 				}
 			}
     });
-  }  
+  }
 
 
   formatToCurrency(value: number): String {

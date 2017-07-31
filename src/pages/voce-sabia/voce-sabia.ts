@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
 import { ComparativoVoceSabiaModal } from './comparativo/comparativo';
-import { Gastos, AnoValor } from '../../model/gastos.model';
+import { Gastos, AnoValor } from '../../models/gastos.model';
 
 @Component({
   selector: 'page-voce-sabia',
@@ -24,7 +24,7 @@ export class VoceSabiaPage {
     anosValores.push(new AnoValor(2015, 16573704.74));
     anosValores.push(new AnoValor(2016, 5139790.74));
     anosValores.push(new AnoValor(2017, 4559132.78));
-    
+
     let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Publicidade', anosValores, '#00b0ff') });
     modal.present();
   }
@@ -36,7 +36,7 @@ export class VoceSabiaPage {
     anosValores.push(new AnoValor(2014, 6092879.05));
     anosValores.push(new AnoValor(2015, 3357845.69));
     anosValores.push(new AnoValor(2016, 2392031.46));
-    
+
     let modal = this.modalCtrl.create(ComparativoVoceSabiaModal, { gastos: new Gastos('Gastos Diárias e Passagens', anosValores, '#FFB300') });
     modal.present();
   }
