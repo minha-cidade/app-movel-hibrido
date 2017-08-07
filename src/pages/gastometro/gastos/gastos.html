@@ -45,15 +45,17 @@
       </ion-item>
       <hr/>
       <div *ngFor="let t of dados[indexAno.get(ano)].topVinte">
-        <ion-item no-lines text-wrap>
-          <ion-label color="dark" padding-left item-left>
-            {{ t.favorecido }}
-          </ion-label>
-          <ion-label padding-left color="dark">
-            {{ formatToCurrency(t.valor) }}
-          </ion-label>
-        </ion-item>
-        <hr/>
+        <div *ngIf="t.valor!=0">
+          <ion-item no-lines text-wrap>
+            <ion-label color="dark" padding-left item-left>
+              {{ t.favorecido }}
+            </ion-label>
+            <ion-label padding-left color="dark">
+              {{ formatToCurrency(t.valor) }}
+            </ion-label>
+          </ion-item>
+          <hr/>
+        </div>
       </div>
     </ion-list>
     </ion-card-content>

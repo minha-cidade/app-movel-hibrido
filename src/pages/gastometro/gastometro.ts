@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, AlertController } from 'ionic-angular';
+import { NavController, ModalController, AlertController, LoadingController } from 'ionic-angular';
 
 import * as numeral from 'numeral';
 
@@ -19,7 +19,7 @@ export class GastometroPage implements OnInit {
   index2017: number;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController,
-              public alertCtrl: AlertController,  public gastometroService: GastometroService) {
+              public alertCtrl: AlertController,  public gastometroService: GastometroService, public loadingCtrl: LoadingController) {
     let date = new Date();
     this.dateHora = date.getHours().toString();
     this.dateMinutos = date.getMinutes().toString();
@@ -77,6 +77,7 @@ export class GastometroPage implements OnInit {
   showModalGastos(gast) {
     let modal = this.modalCtrl.create(GastosModal, { dados: gast.dados, titulo: gast.nome });
     modal.present();
+    this.presentLoading();
   }
 
   showAlert() {
@@ -92,5 +93,13 @@ export class GastometroPage implements OnInit {
     let valor = numeral(value).format('0,0.00').replace(/,/gi, '\.');
     let index = valor.lastIndexOf('.');
     return valor.substr(0, index) + ',' + valor.substr(index + 1);
+  }
+
+  presentLoading() {
+    let loader = this.loadingCtrl.create({
+      content: "Aguarde ...",
+      duration: 2000
+    });
+    loader.present();
   }
 }

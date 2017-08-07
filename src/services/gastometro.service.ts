@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-const URLSERVER = "http://minhacidade.top:8080/api/v1/cidades/joao-pessoa";
+const URLSERVER = "https://minhacidade.top/api/v1/cidades/joao-pessoa";
 
 @Injectable()
 export class GastometroService {
