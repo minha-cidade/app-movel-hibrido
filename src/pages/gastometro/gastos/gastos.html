@@ -28,7 +28,7 @@
     <ion-item style="height: 90px;" no-padding text-wrap>
       <ion-icon name="medkit" padding-left item-left></ion-icon>
       <h6>{{'Gastos com '+ titulo + ' no ano ' +ano}}</h6>
-      <h1><span style="font-family: serif;">$ </span>{{formatToCurrency(valorPago)}}</h1>
+      <h1><span style="font-family: serif;">$ </span>{{formatToCurrency(this.dados[this.indexAno.get(ano)].pago)}}</h1>
     </ion-item>
     <ion-card-header>Principais beneficiados no ano {{ano}}</ion-card-header>
     <ion-card-content  no-padding>

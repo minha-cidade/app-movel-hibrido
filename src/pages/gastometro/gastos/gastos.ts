@@ -16,20 +16,25 @@ export class GastosModal  implements AfterViewInit {
    ano: string;
    titulo: string;
    dados: Array<Gastometro>;
-   valorPago: number;
    indexAno: Map<string, number>;
 
   constructor(public navParams: NavParams, public viewCtrl: ViewController) {
-    this.ano = "2017";
+    this.ano = '2017';
     this.indexAno = new Map();
     // ano => index
-    this.indexAno.set('2017', 0);
-    this.indexAno.set('2016', 1);
+    this.indexAno.set('2017', 4);
+    this.indexAno.set('2016', 3);
+    this.indexAno.set('2015', 5);
+    this.indexAno.set('2014', 0);
+    this.indexAno.set('2013', 1);
+    this.indexAno.set('2012', 6);
+    this.indexAno.set('2011', 7);
+    this.indexAno.set('2010', 8);
+    this.indexAno.set('2009', 2);
+
 
     this.titulo = navParams.get('titulo');
     this.dados = navParams.get('dados');
-    
-    this.valorPago = this.dados[0].pago;
   }
 
   close() {
@@ -44,9 +49,13 @@ export class GastosModal  implements AfterViewInit {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: [2016, 2017],
+        labels: [2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017],
         datasets: [{
-          data: [this.dados[0].pago, this.dados[0].pago],
+          data: [this.dados[this.indexAno.get('2009')].pago, this.dados[this.indexAno.get('2010')].pago,
+                 this.dados[this.indexAno.get('2011')].pago, this.dados[this.indexAno.get('2012')].pago,
+                 this.dados[this.indexAno.get('2013')].pago, this.dados[this.indexAno.get('2014')].pago,
+                 this.dados[this.indexAno.get('2015')].pago, this.dados[this.indexAno.get('2016')].pago,
+                 this.dados[this.indexAno.get('2017')].pago],
           backgroundColor: 'rgb(0, 176, 255)',
           borderColor: 'rgb(0, 176, 255)'
         }]
