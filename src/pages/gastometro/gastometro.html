@@ -21,11 +21,11 @@
       <ion-item style="background-color: #fff" no-padding no-lines text-wrap (click)="showModalGastos(g)">
         <ion-icon style="color: #213A41;" [name]="g.icone" padding-left item-left></ion-icon>
         <h3>{{g.nome}}</h3>
-        <h1><span style="font-family: serif;"><font size="5.2">$ </font></span>{{formatToCurrency(g.valor)}}</h1>
+        <h1><span style="font-family: serif;"><font size="5">$ </font></span>{{formatToCurrency(g.valor)}}</h1>
         <h6 style="color: #757575;">Última atualização {{ dateHora +':'+ dateMinutos + ':'+ dateSegundos }}</h6>
         <ion-icon style="font-size: 52px;" name="ios-arrow-forward" item-right></ion-icon>
       </ion-item>
-      <hr *ngIf="i!=10"/>
+      <hr *ngIf="i!=9"/>
     </div>
   </ion-list>
 </ion-content>

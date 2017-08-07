@@ -9,12 +9,16 @@ import { Gastos, AnoValor } from '../../models/gastos.model';
   templateUrl: 'voce-sabia.html'
 })
 export class VoceSabiaPage {
-  private dinheiroDePublicidade;
-  private dinheiroDePassagens;
+  private dinheiroDePublicidade: Array<string>;
+  private dinheiroDePassagens: Array<string>;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
-    this.dinheiroDePublicidade = "Com esse valor daria para comprar cerca 1 e 500 mil livros didáticos de valores aproximadamente 30 reais";
-    this.dinheiroDePassagens = "Com esse valor daria para construir 314 casas populares de valor de 62 mil e 500 reais";
+    this.dinheiroDePublicidade = [
+      "Com esse dinheiro daria para comprar 1 carro popular no valor de 35 mil reais cada"
+    ];
+    this.dinheiroDePassagens = [
+      "Com esse valor daria para construir 314 casas populares de valor de 62 mil e 500 reais"
+    ];
   }
 
   detalhesPublicidade() {

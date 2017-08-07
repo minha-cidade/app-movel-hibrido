@@ -40,31 +40,36 @@ export class GastometroPage implements OnInit {
       { nome: 'Geral', valor: 0, icone: 'timer', dados: null},
       { nome: 'Saúde', valor:0, icone: 'medkit', dados: null},
       { nome: 'Educação', valor: 0, icone: 'bookmarks', dados: null},
+      { nome: 'Previdência Social', valor: 0, icone: 'body', dados: null},
       { nome: 'Administração', valor: 0, icone: 'person', dados: null},
-      { nome: 'Urbanismo', valor: 0, icone: 'cog', dados: null},
-      { nome: 'Previdência Social', valor: 0, icone: 'people', dados: null},
-      { nome: 'Transporte', valor: 0, icone: 'bus', dados: null},
-      { nome: 'Segurança', valor: 0, icone: 'eye', dados: null},
+      { nome: 'Urbanismo', valor: 0, icone: 'home', dados: null},
+      { nome: 'Transporte', valor: 0, icone: 'train', dados: null},
       { nome: 'Cultura', valor: 0, icone: 'happy', dados: null},
-      { nome: 'Ciência e Tecnologia', valor: 0, icone: 'flask', dados: null},
-      { nome: 'Agricultura', valor: 0, icone: 'flower', dados: null}
+      { nome: 'Segurança', valor: 0, icone: 'md-hand', dados: null},
+      { nome: 'Ciência e Tecnologia', valor: 0, icone: 'flask', dados: null}
     ];
     this.inicializaGastometros();
   }
 
   inicializaGastometros() {
     // subscribe laco de repeticao na funciona como esperado
-    this.gastometroService.getGastometroPorArea('saude').subscribe(data =>
-      { this.gastometros[1].dados = data.gastometro; this.gastometros[1].valor = data.gastometro[0].pago ; this.gastometros[0].valor += data.gastometro[0].pago; } );
-    this.gastometroService.getGastometroPorArea('educacao').subscribe(data => this.gastometros[2].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('administracao').subscribe(data => this.gastometros[3].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('urbanismo').subscribe(data => this.gastometros[4].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('previdencia-social').subscribe(data => this.gastometros[5].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('transporte').subscribe(data => this.gastometros[6].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('seguranca').subscribe(data => this.gastometros[7].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('cultura').subscribe(data => this.gastometros[8].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('ciencia-e-tecnologia').subscribe(data => this.gastometros[9].dados = data.gastometro );
-    this.gastometroService.getGastometroPorArea('agricultura').subscribe(data => this.gastometros[10].dados = data.gastometro );
+    this.gastometroService.getGastometroPorAreaAno('saude', '2017').subscribe(data => { this.gastometros[1].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('educacao', '2017').subscribe(data => {this.gastometros[2].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('previdencia-social', '2017').subscribe(data => {this.gastometros[3].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('administracao', '2017').subscribe(data => {this.gastometros[4].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('urbanismo', '2017').subscribe(data => {this.gastometros[5].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('transporte', '2017').subscribe(data =>{ this.gastometros[6].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('cultura', '2017').subscribe(data => { this.gastometros[7].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('seguranca-publica', '2017').subscribe(data => { this.gastometros[8].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
+
+    this.gastometroService.getGastometroPorAreaAno('ciencia-e-tecnologia', '2017').subscribe(data => { this.gastometros[9].valor = data.gastometro[0].pago; this.gastometros[0].valor += data.gastometro[0].pago;});
   }
 
   showModalGastos(gast) {
