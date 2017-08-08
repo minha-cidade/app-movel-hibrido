@@ -11,13 +11,21 @@ import { Gastos, AnoValor } from '../../models/gastos.model';
 export class VoceSabiaPage {
   private dinheiroDePublicidade: Array<string>;
   private dinheiroDePassagens: Array<string>;
+  private randomIndex: number;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+    this.randomIndex = Math.floor(3 * Math.random());
+    // 43783237.99
     this.dinheiroDePublicidade = [
-      "Com esse dinheiro daria para comprar 1 carro popular no valor de 35 mil reais cada"
+      "Com esse valor daria para comprar 1250 carros populares no valor de 35 mil reais cada",
+      "Com esse valor daria para comprar 729 casas populares no valor de 60 mil reais cada",
+      "Com esse valor daria para comprar 8 escolas (com 20 salas) no valor de 5,2 milhões de reais cada"
     ];
+    // 13.966.272,84
     this.dinheiroDePassagens = [
-      "Com esse valor daria para construir 314 casas populares de valor de 62 mil e 500 reais"
+      "Com esse valor daria para comprar 2 escolas (com 20 salas) no valor de 5,2 milhões de reais cada",
+      "Com esse valor daria para comprar aproximadamente 35 mil cestas básicas no valor de 400 reais cada",
+      "Com esse valor daria para comprar aproximadamente 465 mil livros didáticos no valor de 30 reais cada"
     ];
   }
 

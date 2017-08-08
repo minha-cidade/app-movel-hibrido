@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, ModalController, Nav, LoadingController } from 'ionic-angular';
+import { Platform, ModalController, Nav } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
@@ -22,7 +22,7 @@ export class MyApp {
   pages: Array<{ title: String, component: any, icon: string }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,
-              public modalCtrl: ModalController, public storage: Storage,  public loadingCtrl: LoadingController) {
+              public modalCtrl: ModalController, public storage: Storage) {
     this.initializeApp();
 
     this.storage.get('localidade-done').then(done => {
@@ -53,22 +53,11 @@ export class MyApp {
   }
 
   openPage(page) {
-    if(page.component == GastometroPage) {
-      this.presentLoading();
-    }
     this.nav.setRoot(page.component);
   }
 
   openSobreModal() {
     let mod = this.modalCtrl.create(SobreModal);
     mod.present();
-  }
-
-  presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Aguarde ...",
-      duration: 2000
-    });
-    loader.present();
   }
 }

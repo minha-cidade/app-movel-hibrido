@@ -21,7 +21,7 @@
     </ion-item>
     <ion-card-header style="background-color: #00b0ff;">Publicidade</ion-card-header>
     <ion-card-content padding-top>
-      <p>{{dinheiroDePublicidade}}</p>
+      <p>{{dinheiroDePublicidade[randomIndex]}}</p>
     </ion-card-content>
   </ion-card>
   <ion-card class="card" (click)="detalhesDiariasPassagens()">
@@ -32,7 +32,7 @@
     </ion-item>
     <ion-card-header style="background-color: #FFB300;">Diárias e passagens</ion-card-header>
     <ion-card-content padding-top>
-      <p>{{dinheiroDePassagens}}</p>
+      <p>{{dinheiroDePassagens[randomIndex]}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>
