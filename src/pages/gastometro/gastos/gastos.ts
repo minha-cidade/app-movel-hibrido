@@ -22,15 +22,15 @@ export class GastosModal  implements AfterViewInit {
     this.ano = '2017';
     this.indexAno = new Map();
     // ano => index
-    this.indexAno.set('2017', 4);
-    this.indexAno.set('2016', 3);
-    this.indexAno.set('2015', 5);
-    this.indexAno.set('2014', 0);
-    this.indexAno.set('2013', 1);
-    this.indexAno.set('2012', 6);
-    this.indexAno.set('2011', 7);
-    this.indexAno.set('2010', 8);
-    this.indexAno.set('2009', 2);
+    this.indexAno.set('2017', 0);
+    this.indexAno.set('2016', 1);
+    this.indexAno.set('2015', 2);
+    this.indexAno.set('2014', 3);
+    this.indexAno.set('2013', 4);
+    this.indexAno.set('2012', 5);
+    this.indexAno.set('2011', 6);
+    this.indexAno.set('2010', 7);
+    this.indexAno.set('2009', 8);
 
 
     this.titulo = navParams.get('titulo');
