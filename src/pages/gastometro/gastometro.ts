@@ -81,7 +81,7 @@ export class GastometroPage implements OnInit {
   showAlert() {
     let alert = this.alertCtrl.create({
       title: 'Sobre',
-      subTitle: 'Gastômetro é uma ferramenta para o cidadão acompanhar os gastos de sua cidade de forma simples e rápida',
+      subTitle: 'O gastômetro é uma ferramenta que informa o gasto no ano de 2017 feito pela gestão municipal no geral e por áreas',
       buttons: ['OK']
     });
     alert.present();
