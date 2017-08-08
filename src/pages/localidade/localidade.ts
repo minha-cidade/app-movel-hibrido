@@ -16,7 +16,9 @@ export class LocalidadePage {
   }
 
   pushHomePage() {
-    this.navCtrl.setRoot(HomePage);
-    this.storage.set('localidade-done', true);
+    if(this.estado=="paraiba" && this.cidade=="joao-pessoa") {
+      this.navCtrl.setRoot(HomePage);
+      this.storage.set('localidade-done', true);
+    }
   }
 }
