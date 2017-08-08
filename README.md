@@ -1,26 +1,26 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+# Minha Cidade Aplicativo Móvel
 
-## How to use this template
+## Instalação
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
-
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+Para instalar a versão mais atualizada do framework ionic basta roda o seguinte comando
 
 ```bash
 $ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
 ```
 
-Then, to run it, cd into `myBlank` and run:
+## Teste
+
+Para testar a aplicação no browser execute
 
 ```bash
-$ ionic cordova platform add ios
-$ ionic cordova run ios
+$ ionic serve
 ```
 
-Substitute ios for android if not on a Mac.
+## Builld
 
+Adicione a plataforma desejada e rode o aplicativo
+
+```bash
+$ ionic cordova platform add android
+$ ionic cordova run android
+```
