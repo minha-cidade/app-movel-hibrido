@@ -12,7 +12,7 @@ import { GastosModal } from './gastos/gastos';
   selector: 'page-gastometro'
 })
 export class GastometroPage implements OnInit {
-  gastometros: Array<{ nome: string, valor: number, icone: string, dados: Array<Gastometro> }>;
+  gastometros: Array<{ nome: string, valor: number, icone: string, dados: Array<Gastometro>, color: string,  bgcolor: string }>;
   dateHora: string;
   dateMinutos: string;
   dateSegundos: string;
@@ -37,16 +37,16 @@ export class GastometroPage implements OnInit {
 
   ngOnInit() {
     this.gastometros = [
-      { nome: 'Geral', valor: 0, icone: 'timer', dados: null},
-      { nome: 'Saúde', valor:0, icone: 'medkit', dados: null},
-      { nome: 'Educação', valor: 0, icone: 'bookmarks', dados: null},
-      { nome: 'Previdência Social', valor: 0, icone: 'body', dados: null},
-      { nome: 'Administração', valor: 0, icone: 'person', dados: null},
-      { nome: 'Urbanismo', valor: 0, icone: 'home', dados: null},
-      { nome: 'Transporte', valor: 0, icone: 'train', dados: null},
-      { nome: 'Cultura', valor: 0, icone: 'happy', dados: null},
-      { nome: 'Segurança', valor: 0, icone: 'md-hand', dados: null},
-      { nome: 'Ciência e Tecnologia', valor: 0, icone: 'flask', dados: null}
+      { nome: 'Geral', valor: 0, icone: 'timer', dados: null, color: '#fff', bgcolor: '#00b0ff'},
+      { nome: 'Saúde', valor:0, icone: 'medkit', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Educação', valor: 0, icone: 'bookmarks', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Previdência Social', valor: 0, icone: 'body', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Administração', valor: 0, icone: 'person', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Urbanismo', valor: 0, icone: 'home', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Transporte', valor: 0, icone: 'train', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Cultura', valor: 0, icone: 'happy', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Segurança', valor: 0, icone: 'md-hand', dados: null, color: '#213A41', bgcolor:'#fff'},
+      { nome: 'Ciência e Tecnologia', valor: 0, icone: 'flask', dados: null, color: '#213A41', bgcolor:'#fff'}
     ];
     this.inicializaGastometros();
   }
@@ -73,6 +73,9 @@ export class GastometroPage implements OnInit {
   }
 
   showModalGastos(gast) {
+    if(gast.nome=='Geral'){
+      return;
+    }
     let modal = this.modalCtrl.create(GastosModal, { dados: gast.dados, titulo: gast.nome });
     modal.present();
     this.presentLoading();
