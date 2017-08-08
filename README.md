@@ -16,7 +16,7 @@ Para testar a aplicação no browser execute
 $ ionic serve
 ```
 
-## Builld
+## Build
 
 Adicione a plataforma desejada e rode o aplicativo
 
