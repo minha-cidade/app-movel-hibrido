@@ -19,7 +19,7 @@ export class ReclamacaoModal {
 
   send() {
     let email = {
-      to: 'marcos.alves@cc.ci.ufpb.br',
+      to: 'ouvidoria@tce.pb.gov.br',
       subject: '[APLICATIVO MINHA CIDADE] Voz do Cidadão!',
       body: "Categorias do Problema relatado abaixo: " + this.categoria + "\n\n" + this.body,
       isHtml: true
