@@ -20,6 +20,7 @@ import { LocalidadePage } from '../pages/localidade/localidade';
 
 import { SobreModal } from '../pages/sobre/sobre';
 import { ReclamacaoModal } from '../pages/reclame-aqui/reclamacao/reclamacao';
+import { InformacaoReclameAquiModal } from '../pages/reclame-aqui/informacoes/informacoes';
 import { GastosModal } from '../pages/gastometro/gastos/gastos';
 import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/comparativo';
 
@@ -36,7 +37,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     SobreModal,
     ComparativoVoceSabiaModal,
     GastosModal,
-    ReclamacaoModal
+    ReclamacaoModal,
+    InformacaoReclameAquiModal
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     SobreModal,
     ComparativoVoceSabiaModal,
     GastosModal,
-    ReclamacaoModal
+    ReclamacaoModal,
+    InformacaoReclameAquiModal
   ],
   providers: [
     StatusBar,

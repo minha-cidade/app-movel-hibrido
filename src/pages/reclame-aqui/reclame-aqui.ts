@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
 import { ReclamacaoModal } from './reclamacao/reclamacao';
+import { InformacaoReclameAquiModal } from './informacoes/informacoes';
 
 @Component({
   templateUrl: 'reclame-aqui.html',
@@ -14,6 +15,11 @@ export class ReclameAquiPage {
 
   showCompose() {
     let modal = this.modalCtrl.create(ReclamacaoModal);
+    modal.present();
+  }
+
+  showAlert() {
+    let modal = this.modalCtrl.create(InformacaoReclameAquiModal);
     modal.present();
   }
 }
