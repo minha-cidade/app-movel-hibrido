@@ -5,7 +5,7 @@
     </button>
     <ion-title>Minha Cidade</ion-title>
     <ion-buttons end>
-      <button ion-button>
+      <button ion-button (click)="presentPopover($event)">
         <ion-icon name="more"></ion-icon>
       </button>
     </ion-buttons>
@@ -53,73 +53,4 @@
       </ion-item>
     </ion-card>
   </ion-list>
-  <!--
-  <ion-card class="card">
-    <ion-item color="secondary" no-padding text-wrap>
-      <ion-icon name="trending-up" padding-left item-left></ion-icon>
-      <h2>Orçamento para 2017</h2>
-      <h1>{{'R$ 250.000,00'}}</h1>
-      <p>Última atualização {{'01/01/2017'}}</p>
-    </ion-item>
-    <ion-card-header>Orçamento previsto para 2017</ion-card-header>
-    <ion-card-content>
-      Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
-    </ion-card-content>
-  </ion-card>
-  <ion-card class="card">
-    <ion-item color="secondary" no-padding text-wrap>
-      <ion-icon name="timer" padding-left item-left></ion-icon>
-      <h2>Gastômetro 2017</h2>
-      <h1>{{'R$ 250.000,00'}}</h1>
-      <p>Última atualização {{'12/06/2017'}}</p>
-    </ion-item>
-    <ion-card-header>Orçamento previsto para 2017</ion-card-header>
-    <ion-card-content>
-      Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
-    </ion-card-content>
-  </ion-card> -->
-<!--
-<ion-toolbar color="primary">
-    <ion-segment [(ngModel)]="segHome">
-      <ion-segment-button value="a">Sorry</ion-segment-button>
-      <ion-segment-button value="g">I know</ion-segment-button>
-    </ion-segment>
-  </ion-toolbar>
-
-  <ion-card (click)="showModalInfo()">
-        <ion-item style="background-color: #ffca28; height: 90px;" no-padding text-wrap>
-          <ion-icon style="font-size: 84px; color:#fff" name="medkit" padding-left item-left></ion-icon>
-          <h2 style="color: #e0e0e0">Gastômetro</h2>
-          <h1 style="color: #ffffff">{{'R$ 25 0000,00'}}</h1>
-          <p style="color:#e0e0e0">Última atualização {{'12/06/2017'}}</p>
-        </ion-item>
-        <ion-card-header>Saúde</ion-card-header>
-        <ion-card-content>
-          Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
-        </ion-card-content>
-</ion-card>
-<ion-card (click)="showModalInfo()">
-        <ion-item style="background-color: #e040fb; height: 90px;" no-padding text-wrap>
-          <ion-icon style="font-size: 84px; color:#fff" name="bookmarks" padding-left item-left></ion-icon>
-          <h2 style="color: #e0e0e0">Gastômetro</h2>
-          <h1 style="color: #ffffff">{{'R$ 25 0000,00'}}</h1>
-          <p style="color:#e0e0e0">Última atualização {{'12/06/2017'}}</p>
-        </ion-item>
-        <ion-card-header>Saúde</ion-card-header>
-        <ion-card-content>
-          Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
-        </ion-card-content>
-</ion-card>
-<ion-card (click)="showModalInfo()">
-        <ion-item style="background-color: #00b0ff; height: 90px;" no-padding text-wrap>
-          <ion-icon style="font-size: 84px; color:#fff" name="walk" padding-left item-left></ion-icon>
-          <h2 style="color: #e0e0e0">Gastômetro</h2>
-          <h1 style="color: #ffffff">{{'R$ 25 0000,00'}}</h1>
-          <p style="color:#e0e0e0">Última atualização {{'12/06/2017'}}</p>
-        </ion-item>
-        <ion-card-header>Saúde</ion-card-header>
-        <ion-card-content>
-          Acompanhe os gastos nos últimos anos de sua cidade relacionados a saúde.
-        </ion-card-content>
-</ion-card>-->
 </ion-content>

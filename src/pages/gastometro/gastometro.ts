@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, ModalController, AlertController, LoadingController } from 'ionic-angular';
+import { NavController, ModalController, AlertController, PopoverController, LoadingController } from 'ionic-angular';
 
 import * as numeral from 'numeral';
 
 import { GastometroService } from '../../services/gastometro.service';
 import { Gastometro } from '../../models/gastometro.model';
 import { GastosModal } from './gastos/gastos';
+import { PopoverPage } from '../popover/popover';
 
 @Component({
   templateUrl: 'gastometro.html',
@@ -18,7 +19,7 @@ export class GastometroPage implements OnInit {
   dateSegundos: string;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController,
-              public alertCtrl: AlertController,  public gastometroService: GastometroService, public loadingCtrl: LoadingController) {
+              public alertCtrl: AlertController, public popoverCtrl: PopoverController, public gastometroService: GastometroService, public loadingCtrl: LoadingController) {
     let date = new Date();
     this.dateHora = date.getHours().toString();
     this.dateMinutos = date.getMinutes().toString();
@@ -106,5 +107,12 @@ export class GastometroPage implements OnInit {
 
   callbackSort(a, b) {
     return b.ano-a.ano;
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+      popover.present({
+        ev: myEvent
+    });
   }
 }

@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, PopoverController } from 'ionic-angular';
 
 import { ReclamacaoModal } from './reclamacao/reclamacao';
 import { InformacaoReclameAquiModal } from './informacoes/informacoes';
+import { PopoverPage } from '../popover/popover';
 
 @Component({
   templateUrl: 'reclame-aqui.html',
   selector: 'page-reclame-aqui'
 })
 export class ReclameAquiPage {
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public popoverCtrl: PopoverController) {
 
   }
 
@@ -21,5 +22,12 @@ export class ReclameAquiPage {
   showAlert() {
     let modal = this.modalCtrl.create(InformacaoReclameAquiModal);
     modal.present();
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+      popover.present({
+        ev: myEvent
+    });
   }
 }

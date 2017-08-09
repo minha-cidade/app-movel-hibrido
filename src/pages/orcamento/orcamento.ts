@@ -1,10 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, PopoverController } from 'ionic-angular';
 
 import * as numeral from 'numeral';
 import { Chart } from 'chart.js';
 
 import { Despesa } from '../../models/despesa.model';
+import { PopoverPage } from '../popover/popover';
 
 @Component({
   selector: 'page-orcamento',
@@ -16,7 +17,7 @@ export class OrcamentoPage {
   orcamentoPrevisto: number;
   despesas: Array<Despesa>;
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,  public popoverCtrl: PopoverController) {
     this.orcamentoPrevisto =  2578838120.02;
     this.despesas = [ { nome: "Saúde", valor: 900531814 },
                       { nome: "Educação", valor: 416950010 },
@@ -73,5 +74,12 @@ export class OrcamentoPage {
     let valor = numeral(value).format('0,0.00').replace(/,/gi, '\.');
     let index = valor.lastIndexOf('.');
     return valor.substr(0, index) + ',' + valor.substr(index + 1);
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+      popover.present({
+        ev: myEvent
+    });
   }
 }

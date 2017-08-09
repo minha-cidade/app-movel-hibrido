@@ -18,6 +18,7 @@ import { ReclameAquiPage } from '../pages/reclame-aqui/reclame-aqui';
 import { EducacionalPage } from '../pages/educacional/educacional';
 import { LocalidadePage } from '../pages/localidade/localidade';
 
+import { PopoverPage } from '../pages/popover/popover';
 import { SobreModal } from '../pages/sobre/sobre';
 import { ReclamacaoModal } from '../pages/reclame-aqui/reclamacao/reclamacao';
 import { InformacaoReclameAquiModal } from '../pages/reclame-aqui/informacoes/informacoes';
@@ -38,7 +39,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     ComparativoVoceSabiaModal,
     GastosModal,
     ReclamacaoModal,
-    InformacaoReclameAquiModal
+    InformacaoReclameAquiModal,
+    PopoverPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     ComparativoVoceSabiaModal,
     GastosModal,
     ReclamacaoModal,
-    InformacaoReclameAquiModal
+    InformacaoReclameAquiModal,
+    PopoverPage
   ],
   providers: [
     StatusBar,

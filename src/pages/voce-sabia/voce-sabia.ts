@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, PopoverController } from 'ionic-angular';
 
 import { ComparativoVoceSabiaModal } from './comparativo/comparativo';
 import { Gastos, AnoValor } from '../../models/gastos.model';
+
+import { PopoverPage } from '../popover/popover';
 
 @Component({
   selector: 'page-voce-sabia',
@@ -13,7 +15,7 @@ export class VoceSabiaPage {
   private dinheiroDePassagens: Array<string>;
   private randomIndex: number;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public popoverCtrl: PopoverController) {
     this.randomIndex = Math.floor(3 * Math.random());
     // 43783237.99
     this.dinheiroDePublicidade = [
@@ -53,4 +55,10 @@ export class VoceSabiaPage {
     modal.present();
   }
 
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(PopoverPage);
+      popover.present({
+        ev: myEvent
+    });
+  }
 }

@@ -8,7 +8,7 @@
       <button ion-button (click)="showAlert()">
         <ion-icon name="information-circle"></ion-icon>
       </button>
-      <button ion-button>
+      <button ion-button (click)="presentPopover($event)">
         <ion-icon name="more"></ion-icon>
       </button>
     </ion-buttons>
@@ -28,7 +28,7 @@
     <a href="https://youtu.be/hG1Vd_SsgCc"><img src="assets/images/box-ppa.jpg"/></a>
     <ion-card-header>Plano Plurianual</ion-card-header>
     <ion-card-content>
-      <p>Para oferecer bens e serviços, realizar obras e manter programas sociais, 
+      <p>Para oferecer bens e serviços, realizar obras e manter programas sociais,
         o governo precisa planejar com antecedência o que deve ser feito. Organiza os pedidos da sociedade e submete aos parlamentares.</p>
     </ion-card-content>
   </ion-card>
@@ -36,7 +36,7 @@
     <a href="https://youtu.be/Q66ZSkBLKr0"><img src="assets/images/box-ldo.jpg"/></a>
     <ion-card-header>Lei de Diretrizes Orçamentarias</ion-card-header>
     <ion-card-content>
-      <p>As mudanças que ocorrem ano a ano exigem que o planejamento seja ajustado. Os governantes propõem as regras, 
+      <p>As mudanças que ocorrem ano a ano exigem que o planejamento seja ajustado. Os governantes propõem as regras,
         que são aprovadas pelos parlamentares. É a única lei que impede o recesso do Congresso.</p>
     </ion-card-content>
   </ion-card>
@@ -44,7 +44,7 @@
     <a href="https://youtu.be/CWUNV7wOwYo"><img src="assets/images/box-loa.jpg"/></a>
     <ion-card-header>Lei Orçamentária Anual</ion-card-header>
     <ion-card-content>
-      <p>O orçamento converte em realidade as reivindicações da população, 
+      <p>O orçamento converte em realidade as reivindicações da população,
         definindo gastos conforme os recursos que o governo arrecada a cada ano. Os parlamentares podem alterá-lo por emendas.</p>
     </ion-card-content>
   </ion-card>
