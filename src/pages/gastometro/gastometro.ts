@@ -6,6 +6,7 @@ import * as numeral from 'numeral';
 import { GastometroService } from '../../services/gastometro.service';
 import { Gastometro } from '../../models/gastometro.model';
 import { GastosModal } from './gastos/gastos';
+import { GastosGeralModal } from './geral/geral';
 import { PopoverPage } from '../popover/popover';
 
 @Component({
@@ -13,6 +14,9 @@ import { PopoverPage } from '../popover/popover';
   selector: 'page-gastometro'
 })
 export class GastometroPage implements OnInit {
+  gastometroGeral: any;
+  somaTotal: number;
+
   gastometros: Array<{ nome: string, valor: number, icone: string, dados: Array<Gastometro>, color: string,  bgcolor: string }>;
   dateHora: string;
   dateMinutos: string;
@@ -37,8 +41,11 @@ export class GastometroPage implements OnInit {
   }
 
   ngOnInit() {
+    this.somaTotal = 0;
+
+    this.gastometroGeral = [];
+
     this.gastometros = [
-      { nome: 'Geral', valor: 0, icone: 'timer', dados: null, color: '#fff', bgcolor: '#00b0ff'},
       { nome: 'Saúde', valor:0, icone: 'medkit', dados: null, color: '#213A41', bgcolor:'#fff'},
       { nome: 'Educação', valor: 0, icone: 'bookmarks', dados: null, color: '#213A41', bgcolor:'#fff'},
       { nome: 'Previdência Social', valor: 0, icone: 'body', dados: null, color: '#213A41', bgcolor:'#fff'},
@@ -54,32 +61,79 @@ export class GastometroPage implements OnInit {
 
   inicializaGastometros() {
     // subscribe laco de repeticao na funciona como esperado
-    this.gastometroService.getGastometroPorArea('saude').subscribe(data => {this.gastometros[1].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[1].valor = this.gastometros[1].dados[0].pago; this.gastometros[0].valor += this.gastometros[1].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('saude').subscribe(data => {
+      this.gastometros[0].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[0].dados);
+      this.gastometros[0].valor = this.gastometros[0].dados[0].pago;
+      this.somaTotal += this.gastometros[0].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('educacao').subscribe(data => {this.gastometros[2].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[2].valor = this.gastometros[2].dados[0].pago; this.gastometros[0].valor += this.gastometros[2].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('educacao').subscribe(data => {
+      this.gastometros[1].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[1].dados);
+      this.gastometros[1].valor = this.gastometros[1].dados[0].pago;
+      this.somaTotal += this.gastometros[1].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('previdencia-social').subscribe(data => {this.gastometros[3].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[3].valor = this.gastometros[3].dados[0].pago; this.gastometros[0].valor += this.gastometros[3].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('previdencia-social').subscribe(data => {
+      this.gastometros[2].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[2].dados);
+      this.gastometros[2].valor = this.gastometros[2].dados[0].pago;
+      this.somaTotal += this.gastometros[2].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('administracao').subscribe(data => {this.gastometros[4].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[4].valor = this.gastometros[4].dados[0].pago; this.gastometros[0].valor += this.gastometros[4].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('administracao').subscribe(data => {
+      this.gastometros[3].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[3].dados);
+      this.gastometros[3].valor = this.gastometros[3].dados[0].pago;
+      this.somaTotal += this.gastometros[3].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('urbanismo').subscribe(data => {this.gastometros[5].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[5].valor = this.gastometros[5].dados[0].pago; this.gastometros[0].valor += this.gastometros[5].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('urbanismo').subscribe(data => {
+      this.gastometros[4].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[4].dados);
+      this.gastometros[4].valor = this.gastometros[4].dados[0].pago;
+      this.somaTotal += this.gastometros[4].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('transporte').subscribe(data =>{this.gastometros[6].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[6].valor = this.gastometros[6].dados[0].pago; this.gastometros[0].valor += this.gastometros[6].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('transporte').subscribe(data => {
+      this.gastometros[5].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[5].dados);
+      this.gastometros[5].valor = this.gastometros[5].dados[0].pago;
+      this.somaTotal += this.gastometros[5].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('cultura').subscribe(data => {this.gastometros[7].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[7].valor = this.gastometros[7].dados[0].pago; this.gastometros[0].valor += this.gastometros[7].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('cultura').subscribe(data => {
+      this.gastometros[6].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[6].dados);
+      this.gastometros[6].valor = this.gastometros[6].dados[0].pago;
+      this.somaTotal += this.gastometros[6].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('seguranca-publica').subscribe(data => {this.gastometros[8].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[8].valor = this.gastometros[8].dados[0].pago; this.gastometros[0].valor += this.gastometros[8].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('seguranca-publica').subscribe(data => {
+      this.gastometros[7].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[7].dados);
+      this.gastometros[7].valor = this.gastometros[7].dados[0].pago;
+      this.somaTotal += this.gastometros[7].dados[0].pago;
+    });
 
-    this.gastometroService.getGastometroPorArea('ciencia-e-tecnologia').subscribe(data => {this.gastometros[9].dados = data.gastometro.sort(this.callbackSort);  this.gastometros[9].valor = this.gastometros[9].dados[0].pago; this.gastometros[0].valor += this.gastometros[9].dados[0].pago;});
+    this.gastometroService.getGastometroPorArea('ciencia-e-tecnologia').subscribe(data => {
+      this.gastometros[8].dados = data.gastometro.sort(this.callbackSort);
+      this.gastometroGeral.push(this.gastometros[8].dados);
+      this.gastometros[8].valor = this.gastometros[8].dados[0].pago;
+      this.somaTotal += this.gastometros[8].dados[0].pago;
+    });
+    this.presentLoading();
   }
 
   showModalGastos(gast) {
-    if(gast.nome=='Geral'){
-      return;
-    }
     let modal = this.modalCtrl.create(GastosModal, { dados: gast.dados, titulo: gast.nome });
     modal.present();
-    this.presentLoading();
+  }
+
+  showModalGastosGeral() {
+    let modal = this.modalCtrl.create(GastosGeralModal, { dados: this.gastometroGeral });
+    modal.present();
   }
 
   showAlert() {

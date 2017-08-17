@@ -17,6 +17,14 @@
 
 <ion-content>
   <ion-list class="card">
+    <ion-item style="background-color: #fff" no-padding no-lines text-wrap (click)="showModalGastosGeral()">
+      <ion-icon style="color: #213A41;" name="timer" padding-left item-left></ion-icon>
+      <h3>Geral</h3>
+      <h1><span style="font-family: serif;"><font size="5">$ </font></span>{{formatToCurrency(somaTotal)}}</h1>
+      <h6 style="color: #757575;">Última atualização {{ dateHora +':'+ dateMinutos + ':'+ dateSegundos }}</h6>
+      <ion-icon style="font-size: 52px;" name="ios-arrow-forward" item-right></ion-icon>
+    </ion-item>
+    <hr/>
     <div *ngFor="let g of gastometros; let i = index">
       <ion-item style="background-color: #fff" no-padding no-lines text-wrap (click)="showModalGastos(g)">
         <ion-icon style="color: #213A41;" [name]="g.icone" padding-left item-left></ion-icon>
@@ -25,7 +33,7 @@
         <h6 style="color: #757575;">Última atualização {{ dateHora +':'+ dateMinutos + ':'+ dateSegundos }}</h6>
         <ion-icon style="font-size: 52px;" name="ios-arrow-forward" item-right></ion-icon>
       </ion-item>
-      <hr *ngIf="i!=9"/>
+      <hr *ngIf="i!=8"/>
     </div>
   </ion-list>
 </ion-content>

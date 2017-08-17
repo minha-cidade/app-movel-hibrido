@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-item color="primary" no-lines>
+      <ion-icon name="close" color="white" item-left (click)="close()"></ion-icon>
+      <ion-title>Gastos Gerais</ion-title>
+    </ion-item>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="background">
+  <canvas #pieCanvas height="300" padding></canvas>
+  <ion-item no-lines>
+    <ion-icon name="calendar" item-left></ion-icon>
+    <ion-label color="dark" style="font-size: 16px;">Selecione um ano</ion-label>
+      <ion-select color="dark" [(ngModel)]="ano" (ionChange)="updateChart()" selected>
+        <ion-option value="2009">2009</ion-option>
+        <ion-option value="2010">2010</ion-option>
+        <ion-option value="2011">2011</ion-option>
+        <ion-option value="2012">2012</ion-option>
+        <ion-option value="2013">2013</ion-option>
+        <ion-option value="2014">2014</ion-option>
+        <ion-option value="2015">2015</ion-option>
+        <ion-option value="2016">2016</ion-option>
+        <ion-option value="2017">2017</ion-option>
+      </ion-select>
+    </ion-item>
+  <ion-card>
+    <ion-item style="height: 90px;" no-padding text-wrap>
+      <ion-icon name="timer" padding-left item-left></ion-icon>
+      <h6>{{'Gastos Gerais no ano de ' +ano}}</h6>
+      <h1><span style="font-family: serif;">$ </span>{{formatToCurrency(valorGeral())}}</h1>
+    </ion-item>
+    <ion-card-header>Principais áreas beneficiadas no ano {{ano}}</ion-card-header>
+    <ion-card-content  no-padding>
+    <ion-list>
+      <ion-item no-lines text-wrap>
+        <ion-label item-left>
+          <ion-icon name="list" color="primary" style="font-size: 1.5em;" padding-right></ion-icon>
+          Área
+        </ion-label>
+        <ion-label>
+          <ion-icon name="pricetag" color="primary" style="font-size: 1.5em;" padding-right></ion-icon>
+          Valor (<span style="font-family: serif;">$</span>)
+        </ion-label>
+      </ion-item>
+      <hr/>
+      <div *ngFor="let t of areasTopVinte">
+        <div *ngIf="t.valor!=0">
+          <ion-item no-lines text-wrap>
+            <ion-label color="dark" padding-left item-left>
+              {{ upperCase(t.area) }}
+            </ion-label>
+            <ion-label padding-left color="dark">
+              {{ formatToCurrency(t.pago) }}
+            </ion-label>
+          </ion-item>
+          <hr/>
+        </div>
+      </div>
+    </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -23,6 +23,7 @@ import { SobreModal } from '../pages/sobre/sobre';
 import { ReclamacaoModal } from '../pages/reclame-aqui/reclamacao/reclamacao';
 import { InformacaoReclameAquiModal } from '../pages/reclame-aqui/informacoes/informacoes';
 import { GastosModal } from '../pages/gastometro/gastos/gastos';
+import { GastosGeralModal } from '../pages/gastometro/geral/geral';
 import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/comparativo';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     GastosModal,
     ReclamacaoModal,
     InformacaoReclameAquiModal,
+    GastosGeralModal,
     PopoverPage
   ],
   imports: [
@@ -63,6 +65,7 @@ import { ComparativoVoceSabiaModal } from '../pages/voce-sabia/comparativo/compa
     GastosModal,
     ReclamacaoModal,
     InformacaoReclameAquiModal,
+    GastosGeralModal,
     PopoverPage
   ],
   providers: [
